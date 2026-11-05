@@ -1,0 +1,457 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import './animate.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-sans: 'Inter', sans-serif, 'Apple Color Emoji';
+    --radix-collapsible-content-height: 1.75em;
+
+    --text-xxs: 0.625rem;
+    --text-xxs--line-height: 0.875rem;
+
+    --breakpoint-4xl: 2560px;
+    --breakpoint-3xl: 1920px;
+    --breakpoint-2xl: 1536px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-md: 768px;
+    --breakpoint-sm: 640px;
+    --breakpoint-xs: 480px;
+    --breakpoint-xxs: 360px;
+    --breakpoint-tiny: 320px;
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-card: var(--card);
+
+    --color-background: var(--background);
+    --color-background-overlay: var(--background-overlay);
+
+    --color-primary-text: var(--primary-text);
+    --color-primary-link-text: var(--primary-link-text);
+    --color-secondary-text: var(--secondary-text);
+    --color-secondary-muted-text: var(--secondary-muted-text);
+
+    --color-sidebar-background: var(--sidebar-background);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    --color-page-background: var(--page-background);
+    --color-page-border: var(--page-border);
+
+    --color-popover: var(--popover);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-success: var(--success);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-success: var(--success);
+    --color-info: var(--info);
+    --color-warning: var(--warning);
+    --color-error: var(--error);
+
+    --color-warning-text: var(--warning-text);
+    --color-warning-bg: var(--warning-bg);
+    --color-warning-border: var(--warning-border);
+
+    --color-info-bg: var(--info-bg);
+    --color-info-text: var(--info-text);
+    --color-info-border: var(--info-border);
+
+    --color-success-bg: var(--success-bg);
+    --color-success-text: var(--success-text);
+    --color-success-border: var(--success-border);
+
+    --color-error-bg: var(--error-bg);
+    --color-error-text: var(--error-text);
+    --color-error-border: var(--error-border);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-skeleton: var(--skeleton);
+    --color-controls-active: var(--controls-active);
+    --color-controls-default: var(--controls-default);
+
+    --color-table-header-background: var(--table-header-background);
+    --color-button-border: var(--button-border);
+
+    --color-sync-modal-label-green: var(--sync-modal-label-green);
+    --color-sync-modal-label-red: var(--sync-modal-label-red);
+    --color-sync-modal-label-blue: var(--sync-modal-label-blue);
+
+    --color-controls: var(--controls);
+    --color-controls-foreground: var(--controls-foreground);
+    --color-controls-hovered: var(--controls-hovered);
+}
+
+/*
+  The default border color has changed to currentColor in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    body,
+    html {
+        --font-sans: 'Inter', sans-serif, 'Apple Color Emoji';
+    }
+
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+@layer utilities {
+    body,
+    html {
+        --font-sans: 'Inter', sans-serif, 'Apple Color Emoji';
+    }
+
+    ::-ms-reveal {
+        display: none;
+    }
+
+    .fluid-text-2xl-3xl {
+        font-size: clamp(24px, 14.737px + 0.8224vw, 30px);
+    }
+
+    .fluid-text-xl-2xl {
+        font-size: clamp(20px, 14.737px + 0.8224vw, 24px);
+    }
+
+    .fluid-text-base-xl {
+        font-size: clamp(16px, 13.368px + 0.3289vw, 20px);
+    }
+
+    .fluid-text-sm-lg {
+        font-size: clamp(14px, 11.711px + 0.3289vw, 18px);
+    }
+
+    .fluid-text-sm-base {
+        font-size: clamp(14px, 13.368px + 0.1645vw, 16px);
+    }
+
+    .fluid-text-xs-base {
+        font-size: clamp(12px, 9.368px + 0.3289vw, 16px);
+    }
+
+    .fluid-text-xs-sm {
+        font-size: clamp(12px, 11.342px + 0.1645vw, 14px);
+    }
+
+    .fluid-text-xxs-sm {
+        font-size: clamp(10px, 7.368px + 0.3289vw, 14px);
+    }
+
+    .fluid-text-xxs-xs {
+        font-size: clamp(10px, 9.342px + 0.1645vw, 12px);
+    }
+
+    .fluid-combobox-width {
+        width: clamp(150px, 40vw + 100px, 500px);
+    }
+
+    .fluid-floor-select-width {
+        width: clamp(120px, 10vw + 100px, 180px);
+    }
+}
+
+:root {
+    --radius: 0.5rem;
+
+    --background: hsl(0, 0%, 98%);
+    --background-overlay: hsl(220, 18%, 16%);
+    --page-background: hsl(0, 0%, 100%);
+    --page-border: hsl(240, 20%, 95.5%);
+
+    --sidebar-background: hsl(0, 0%, 100%);
+    --sidebar-accent: hsla(42, 100%, 63.5%, 0.15);
+    --sidebar-foreground: hsl(0, 0%, 26.3%);
+    --sidebar-accent-foreground: hsla(39, 100%, 63.5%, 85%);
+    --sidebar-border: hsl(240, 20%, 95.5%);
+    --sidebar-ring: hsla(42, 100%, 63.5%, 0.7);
+
+    --popover: hsl(0, 0%, 100%);
+    --card: hsl(0 0% 100%);
+    --skeleton: hsl(0 0% 87%);
+    --button-border: hsl(220, 13%, 91%);
+
+    --primary-text: hsl(0, 0%, 26.3%);
+    --primary-link-text: hsl(217, 91%, 60%);
+    --secondary-text: hsl(0, 0%, 50.7%);
+    --secondary-muted-text: hsl(0, 0%, 66.3%);
+
+    --primary: hsl(42, 100%, 63%);
+    --primary-foreground: hsl(0 0% 97%);
+    --secondary: hsl(0 0% 92.1%);
+    --secondary-foreground: hsl(0 0% 9%);
+    --destructive: hsl(0 84.2% 60.2%);
+    --destructive-foreground: hsl(0 0% 98%);
+    --accent: hsl(0, 0%, 94%);
+    --accent-foreground: hsl(0, 0%, 9%);
+
+    --border: hsl(220, 20%, 94%);
+    --input: hsl(216, 12.2%, 92%);
+    --ring: hsl(42, 100%, 63%);
+    --controls-active: hsl(0, 0%, 94.9%);
+    --controls-default: hsl(0, 0%, 100%);
+
+    --table-header-background: hsl(0, 0%, 97%);
+
+    --sync-modal-label-green: hsl(142, 85%, 92%);
+    --sync-modal-label-red: hsl(0, 100%, 93%);
+    --sync-modal-label-blue: hsl(218, 95%, 94%);
+
+    --success: hsl(160, 84%, 39%);
+    --info: hsl(199, 89%, 48%);
+    --warning: hsl(38, 92%, 50%);
+    --error: hsl(0, 84%, 60%);
+
+    --success-bg: hsl(149, 80%, 90%);
+    --success-text: hsl(152 76% 25%);
+    --success-border: hsl(152, 76%, 80%);
+
+    --info-bg: hsl(204, 94%, 94%);
+    --info-text: hsl(204 94% 30%);
+    --info-border: hsl(201, 94%, 86%);
+
+    --warning-bg: hsl(48, 96%, 89%);
+    --warning-text: hsl(48 96% 30%);
+    --warning-border: hsl(48, 97%, 77%);
+
+    --error-bg: hsl(0, 93%, 94%);
+    --error-text: hsl(0 93% 35%);
+    --error-border: hsl(0, 96%, 89%);
+
+    --controls: hsl(0, 0%, 94%);
+    --controls-foreground: hsl(0, 0%, 90%);
+    --controls-hovered: hsl(0, 0%, 96%);
+}
+
+.dark {
+    --background: hsl(0, 0%, 3.9%);
+    --background-overlay: hsl(0, 0%, 7%);
+    --page-background: hsl(0, 0%, 7%);
+    --page-border: hsl(0, 0%, 15.9%);
+
+    --sidebar-background: hsl(0, 0%, 7%);
+    --sidebar-accent: hsla(42, 100%, 63.5%, 0.35);
+    --sidebar-foreground: hsl(0, 0%, 95.9%);
+    --sidebar-accent-foreground: hsl(0, 0%, 95.9%);
+    --sidebar-border: hsl(0, 0%, 15.9%);
+    --sidebar-ring: hsla(42, 100%, 63.5%, 0.4);
+
+    --popover: hsl(0, 0%, 12%);
+    --card: hsl(0 0% 3.9%);
+    --skeleton: hsl(0 0% 16%);
+    --button-border: hsl(220, 13%, 91%);
+
+    --primary-text: hsl(0, 0%, 95.9%);
+    --primary-link-text: hsl(234, 87%, 75%);
+    --secondary-text: hsl(0, 0%, 50.7%);
+    --secondary-muted-text: hsl(0 0% 50%);
+
+    --primary: hsla(39, 66%, 53%, 0.85);
+    --primary-foreground: hsl(0 0% 98%);
+    --secondary: hsl(0 0% 14.9%);
+    --secondary-foreground: hsl(0 0% 98%);
+    --destructive: hsl(0 84% 60%);
+    --destructive-foreground: hsl(0 0% 98%);
+    --accent: hsl(0, 0%, 14.9%);
+    --accent-foreground: hsl(0 0% 98%);
+
+    --border: hsl(0 0% 14.9%);
+    --input: hsl(0 0% 14.9%);
+    --ring: hsl(0 0% 83.1%);
+    --controls-active: hsl(240, 2%, 23%);
+    --controls-default: hsl(0, 0%, 10%);
+
+    --table-header-background: hsl(0, 0%, 13%);
+
+    --sync-modal-label-green: hsl(152 54% 20%);
+    --sync-modal-label-red: hsl(0 46% 24%);
+    --sync-modal-label-blue: hsl(219 58% 23%);
+
+    --success: hsl(161, 94%, 30%);
+    --info: hsl(200, 98%, 39%);
+    --warning: hsl(32, 95%, 44%);
+    --error: hsl(0, 72%, 51%);
+
+    --success-bg: hsl(152 76% 18% / 0.3);
+    --success-text: hsl(152 76% 55%);
+    --success-border: hsl(166, 91%, 9%);
+
+    --info-bg: hsl(204 94% 20% / 0.3);
+    --info-text: hsl(204 94% 65%);
+    --info-border: hsl(204, 80%, 16%);
+
+    --warning-bg: hsl(48 96% 20% / 0.3);
+    --warning-text: hsl(48 96% 65%);
+    --warning-border: hsl(26, 83%, 14%);
+
+    --error-bg: hsl(0 93% 20% / 0.3);
+    --error-text: hsl(0 93% 65%);
+    --error-border: hsl(0, 75%, 15%);
+
+    --controls: hsl(0, 0%, 10%);
+    --controls-foreground: hsl(0, 0%, 10%);
+    --controls-hovered: hsl(0, 0%, 15%);
+}
+
+@layer base {
+    * {
+        @apply border-border;
+        @apply [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 dark:[&::-webkit-scrollbar-track]:bg-neutral-700;
+    }
+
+    body {
+        @apply bg-background text-primary-text cursor-default;
+    }
+
+    .table-container {
+        @apply flex h-full flex-col items-end justify-between overflow-y-auto;
+    }
+
+    .table-main {
+        @apply flex w-full table-fixed flex-row justify-center lg:inline-table lg:overflow-y-auto;
+    }
+
+    .table-header {
+        @apply [&_tr]:border-border lg:sticky lg:top-0 lg:z-5 [&_tr]:border-y [&_tr]:border-l lg:[&_tr]:border-0;
+    }
+
+    .table-header-row {
+        @apply [&_th]:border-border bg-table-header-background mb-2 flex flex-col flex-nowrap rounded-l-lg lg:mb-0 lg:table-row lg:not-first:hidden [&_th]:border-b [&_th:last-child]:border-b-0 lg:[&_th:last-child]:border-b;
+    }
+
+    .table-body {
+        @apply [&_tr]:border-border flex-1 lg:flex-none [&_tr]:border-x [&_tr]:border-y lg:[&_tr]:border-0 lg:[&_tr]:border-b;
+    }
+
+    .table-body-row {
+        @apply [&_td]:border-border xxs:rounded-l-none mb-2 flex flex-col flex-nowrap rounded-l-lg rounded-r-lg lg:mb-0 lg:table-row [&_td]:border-b [&_td:last-child]:border-b-0 lg:[&_td:last-child]:border-b;
+    }
+
+    .tag-style {
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        padding: 4px 8px;
+        display: inline-flex;
+        align-items: center;
+        background: var(--accent);
+    }
+
+    .scan-modal-table-container {
+        @apply flex h-full flex-col items-end justify-between overflow-y-auto;
+    }
+
+    .scan-modal-table-main {
+        @apply inline-table w-full table-fixed flex-row justify-center overflow-y-auto;
+    }
+
+    .scan-modal-table-header {
+        @apply [&_tr]:border-border bg-table-header-background sticky top-0 z-5 opacity-100 [&_tr]:border-0 [&_tr]:border-y [&_tr]:border-l;
+    }
+
+    .scan-modal-table-header-row {
+        @apply bg-accent/60 [&_th]:border-border mb-0 table-row flex-col flex-nowrap rounded-l-lg not-first:hidden [&_th]:border-b [&_th:last-child]:border-b;
+    }
+
+    .scan-modal-table-body {
+        @apply [&_tr]:border-border flex-none [&_tr]:border-0 [&_tr]:border-x [&_tr]:border-y [&_tr]:border-b [&_tr:last-child]:border-0;
+    }
+
+    .scan-modal-table-body-row {
+        @apply [&_td]:border-border mb-0 table-row flex-col flex-nowrap rounded-l-none rounded-r-lg [&_td]:border-b [&_td:last-child]:border-b;
+    }
+
+    .grid-stack-placeholder > .placeholder-content {
+        border-radius: 12px;
+    }
+}
+
+/* Default behavior for large screens (Desktop) */
+.carousel-container {
+    padding: 30px;
+}
+
+.carousel-container .CarouselItem {
+    margin: 0 15px;
+    flex-basis: 25%;
+}
+
+/* For Medium screens (Tablets) */
+@media (max-width: 1024px) {
+    .carousel-container {
+        padding: 40px;
+    }
+
+    .carousel-container .CarouselItem {
+        margin: 0 10px;
+        flex-basis: 33.33%;
+    }
+
+    .CarouselPrevious,
+    .CarouselNext {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+    }
+
+    .CarouselPrevious {
+        left: 10px;
+    }
+
+    .CarouselNext {
+        right: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-container {
+        padding: 35px;
+    }
+
+    .carousel-container .CarouselItem {
+        margin: 0 5px;
+        flex-basis: 33.33%;
+    }
+
+    .CarouselPrevious,
+    .CarouselNext {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        z-index: 10;
+    }
+
+    .CarouselPrevious {
+        left: 15px;
+    }
+
+    .CarouselNext {
+        right: 15px;
+    }
+}

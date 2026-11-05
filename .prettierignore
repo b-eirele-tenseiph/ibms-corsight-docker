@@ -1,0 +1,19 @@
+resources/js/components/ui/*
+resources/views/mail/*
+
+# Artifacts
+**/.git
+**/public
+*.md
+
+# Configurations
+**/.github
+**/.vscode
+
+# Packages and dependencies
+**/node_modules
+**/vendor
+composer.json
+composer.lock
+package.json
+package-lock.json

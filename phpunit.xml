@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+>
+    <testsuites>
+        <testsuite name="Unit">
+            <directory>tests/Unit</directory>
+            <!-- Exclude Sample Test -->
+            <exclude>./tests/Unit/ExampleTest.php</exclude>
+        </testsuite>
+        <testsuite name="Feature">
+            <directory>tests/Feature</directory>
+            <!-- Exclude unused authentication features -->
+            <exclude>./tests/Feature/DashboardTest.php</exclude>
+            <exclude>./tests/Feature/Auth/AuthenticationTest.php</exclude>
+            <exclude>./tests/Feature/Auth/EmailVerificationTest.php</exclude>
+            <exclude>./tests/Feature/Auth/PasswordConfirmationTest.php</exclude>
+            <exclude>./tests/Feature/Auth/PasswordResetTest.php</exclude>
+            <exclude>./tests/Feature/Auth/RegistrationTest.php</exclude>
+            <exclude>./tests/Feature/Settings/PasswordUpdateTest.php</exclude>
+            <exclude>./tests/Feature/Settings/ProfileUpdateTest.php</exclude>
+            <!-- Exclude Sample Test -->
+            <exclude>./tests/Feature/ExampleTest.php</exclude>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory>app</directory>
+        </include>
+    </source>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="APP_MAINTENANCE_DRIVER" value="file"/>
+        <env name="BCRYPT_ROUNDS" value="4"/>
+        <env name="CACHE_STORE" value="array"/>
+        <env name="DB_CONNECTION" value="sqlite"/>
+        <env name="DB_DATABASE" value=":memory:"/>
+        <env name="MAIL_MAILER" value="array"/>
+        <env name="PULSE_ENABLED" value="false"/>
+        <env name="QUEUE_CONNECTION" value="sync"/>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="TELESCOPE_ENABLED" value="false"/>
+        <server name="REMOTELOCK_WEBHOOK_SECRET" value="test"/>
+        <server name="REMOTELOCK_OAUTH_URL" value="https://api.remotelock-pf.jp"/>
+        <server name="REMOTELOCK_API_HOST" value="https://api.remotelock-pf.jp"/>
+    </php>
+</phpunit>

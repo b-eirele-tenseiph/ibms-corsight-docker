@@ -1,0 +1,54 @@
+@layer base {
+    @keyframes tilt-shaking {
+        0% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(6deg);
+        }
+        50% {
+            transform: rotate(0eg);
+        }
+        75% {
+            transform: rotate(-6deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    .animate-shaking {
+        animation: tilt-shaking 0.5s ease-in-out infinite;
+    }
+
+    @keyframes slight-shake {
+        0% {
+            transform: translate(0.2px, 0.2px) rotate(0deg);
+        }
+        15% {
+            transform: translate(-0.2px, -0.2px) rotate(-0.1deg);
+        }
+        30% {
+            transform: translate(0.2px, 0px) rotate(0.1deg);
+        }
+        45% {
+            transform: translate(-0.2px, 0.2px) rotate(0deg);
+        }
+        60% {
+            transform: translate(0.2px, -0.2px) rotate(0.1deg);
+        }
+        75% {
+            transform: translate(-0.2px, 0.2px) rotate(-0.1deg);
+        }
+        90% {
+            transform: translate(0.2px, -0.2px) rotate(0.1deg);
+        }
+        100% {
+            transform: translate(0.2px, 0.2px) rotate(0deg);
+        }
+    }
+
+    .shaky {
+        animation: slight-shake 1s ease-in-out infinite;
+    }
+}

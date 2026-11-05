@@ -1,0 +1,26 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\Room;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class RoomAccessFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'user_id' => User::factory(),
+            'room_id' => Room::factory(),
+            'is_permanent' => false,
+            'start_date' => now()->startOfHour(),
+            'end_date' => now()->addDay()
+        ];
+    }
+}

@@ -1,0 +1,1025 @@
+{
+    "summary": [
+        {
+            "id": 1,
+            "name": "IUWS-WM-0001",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-01-01",
+            "usage": 182,
+            "amount": 3731.0
+        },
+        {
+            "id": 2,
+            "name": "IUWS-WM-0002",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-01-01",
+            "usage": 149,
+            "amount": 3054.5
+        },
+        {
+            "id": 3,
+            "name": "IUWS-WM-0003",
+            "consumer_type": "commercial",
+            "meter_size": "3/4",
+            "billing_date": "2025-01-01",
+            "usage": 405,
+            "amount": 11340.0
+        },
+        {
+            "id": 4,
+            "name": "IUWS-WM-0004",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-01-01",
+            "usage": 197,
+            "amount": 4038.5
+        },
+        {
+            "id": 5,
+            "name": "IUWS-WM-0005",
+            "consumer_type": "commercial",
+            "meter_size": "1/2",
+            "billing_date": "2025-01-01",
+            "usage": 370,
+            "amount": 12950.0
+        },
+        {
+            "id": 6,
+            "name": "IUWS-WM-0006",
+            "consumer_type": "residential",
+            "meter_size": "3/4",
+            "billing_date": "2025-01-01",
+            "usage": 215,
+            "amount": 4407.5
+        },
+        {
+            "id": 7,
+            "name": "IUWS-WM-0007",
+            "consumer_type": "commercial",
+            "meter_size": "1",
+            "billing_date": "2025-01-01",
+            "usage": 518,
+            "amount": 18130.0
+        },
+        {
+            "id": 8,
+            "name": "IUWS-WM-0008",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-01-01",
+            "usage": 170,
+            "amount": 3485.0
+        },
+
+        {
+            "id": 11,
+            "name": "IUWS-WM-0001",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-02-01",
+            "usage": 189,
+            "amount": 3874.5
+        },
+        {
+            "id": 12,
+            "name": "IUWS-WM-0002",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-02-01",
+            "usage": 157,
+            "amount": 3218.5
+        },
+        {
+            "id": 13,
+            "name": "IUWS-WM-0003",
+            "consumer_type": "commercial",
+            "meter_size": "3/4",
+            "billing_date": "2025-02-01",
+            "usage": 381,
+            "amount": 10668.0
+        },
+        {
+            "id": 14,
+            "name": "IUWS-WM-0004",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-02-01",
+            "usage": 211,
+            "amount": 4325.5
+        },
+        {
+            "id": 15,
+            "name": "IUWS-WM-0005",
+            "consumer_type": "commercial",
+            "meter_size": "1/2",
+            "billing_date": "2025-02-01",
+            "usage": 393,
+            "amount": 13755.0
+        },
+        {
+            "id": 16,
+            "name": "IUWS-WM-0006",
+            "consumer_type": "residential",
+            "meter_size": "3/4",
+            "billing_date": "2025-02-01",
+            "usage": 202,
+            "amount": 4141.0
+        },
+        {
+            "id": 17,
+            "name": "IUWS-WM-0007",
+            "consumer_type": "commercial",
+            "meter_size": "1",
+            "billing_date": "2025-02-01",
+            "usage": 505,
+            "amount": 17675.0
+        },
+        {
+            "id": 18,
+            "name": "IUWS-WM-0008",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-02-01",
+            "usage": 177,
+            "amount": 3628.5
+        },
+
+        {
+            "id": 21,
+            "name": "IUWS-WM-0001",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-03-01",
+            "usage": 204,
+            "amount": 4182.0
+        },
+        {
+            "id": 22,
+            "name": "IUWS-WM-0002",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-03-01",
+            "usage": 172,
+            "amount": 3526.0
+        },
+        {
+            "id": 23,
+            "name": "IUWS-WM-0003",
+            "consumer_type": "commercial",
+            "meter_size": "3/4",
+            "billing_date": "2025-03-01",
+            "usage": 418,
+            "amount": 11704.0
+        },
+        {
+            "id": 24,
+            "name": "IUWS-WM-0004",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-03-01",
+            "usage": 228,
+            "amount": 4674.0
+        },
+        {
+            "id": 25,
+            "name": "IUWS-WM-0005",
+            "consumer_type": "commercial",
+            "meter_size": "1/2",
+            "billing_date": "2025-03-01",
+            "usage": 412,
+            "amount": 14420.0
+        },
+        {
+            "id": 26,
+            "name": "IUWS-WM-0006",
+            "consumer_type": "residential",
+            "meter_size": "3/4",
+            "billing_date": "2025-03-01",
+            "usage": 223,
+            "amount": 4571.5
+        },
+        {
+            "id": 27,
+            "name": "IUWS-WM-0007",
+            "consumer_type": "commercial",
+            "meter_size": "1",
+            "billing_date": "2025-03-01",
+            "usage": 536,
+            "amount": 18760.0
+        },
+        {
+            "id": 28,
+            "name": "IUWS-WM-0008",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-03-01",
+            "usage": 186,
+            "amount": 3813.0
+        },
+
+        {
+            "id": 31,
+            "name": "IUWS-WM-0001",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-04-01",
+            "usage": 216,
+            "amount": 4428.0
+        },
+        {
+            "id": 32,
+            "name": "IUWS-WM-0002",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-04-01",
+            "usage": 183,
+            "amount": 3751.5
+        },
+        {
+            "id": 33,
+            "name": "IUWS-WM-0003",
+            "consumer_type": "commercial",
+            "meter_size": "3/4",
+            "billing_date": "2025-04-01",
+            "usage": 430,
+            "amount": 12040.0
+        },
+        {
+            "id": 34,
+            "name": "IUWS-WM-0004",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-04-01",
+            "usage": 240,
+            "amount": 4920.0
+        },
+        {
+            "id": 35,
+            "name": "IUWS-WM-0005",
+            "consumer_type": "commercial",
+            "meter_size": "1/2",
+            "billing_date": "2025-04-01",
+            "usage": 437,
+            "amount": 15295.0
+        },
+        {
+            "id": 36,
+            "name": "IUWS-WM-0006",
+            "consumer_type": "residential",
+            "meter_size": "3/4",
+            "billing_date": "2025-04-01",
+            "usage": 237,
+            "amount": 4858.5
+        },
+        {
+            "id": 37,
+            "name": "IUWS-WM-0007",
+            "consumer_type": "commercial",
+            "meter_size": "1",
+            "billing_date": "2025-04-01",
+            "usage": 551,
+            "amount": 19285.0
+        },
+        {
+            "id": 38,
+            "name": "IUWS-WM-0008",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-04-01",
+            "usage": 198,
+            "amount": 4059.0
+        },
+
+        {
+            "id": 41,
+            "name": "IUWS-WM-0001",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-05-01",
+            "usage": 233,
+            "amount": 4776.5
+        },
+        {
+            "id": 42,
+            "name": "IUWS-WM-0002",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-05-01",
+            "usage": 198,
+            "amount": 4059.0
+        },
+        {
+            "id": 43,
+            "name": "IUWS-WM-0003",
+            "consumer_type": "commercial",
+            "meter_size": "3/4",
+            "billing_date": "2025-05-01",
+            "usage": 452,
+            "amount": 12656.0
+        },
+        {
+            "id": 44,
+            "name": "IUWS-WM-0004",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-05-01",
+            "usage": 255,
+            "amount": 5227.5
+        },
+        {
+            "id": 45,
+            "name": "IUWS-WM-0005",
+            "consumer_type": "commercial",
+            "meter_size": "1/2",
+            "billing_date": "2025-05-01",
+            "usage": 458,
+            "amount": 16030.0
+        },
+        {
+            "id": 46,
+            "name": "IUWS-WM-0006",
+            "consumer_type": "residential",
+            "meter_size": "3/4",
+            "billing_date": "2025-05-01",
+            "usage": 251,
+            "amount": 5145.5
+        },
+        {
+            "id": 47,
+            "name": "IUWS-WM-0007",
+            "consumer_type": "commercial",
+            "meter_size": "1",
+            "billing_date": "2025-05-01",
+            "usage": 569,
+            "amount": 19915.0
+        },
+        {
+            "id": 48,
+            "name": "IUWS-WM-0008",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-05-01",
+            "usage": 213,
+            "amount": 4366.5
+        },
+
+        {
+            "id": 51,
+            "name": "IUWS-WM-0001",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-06-01",
+            "usage": 251,
+            "amount": 5145.5
+        },
+        {
+            "id": 52,
+            "name": "IUWS-WM-0002",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-06-01",
+            "usage": 214,
+            "amount": 4387.0
+        },
+        {
+            "id": 53,
+            "name": "IUWS-WM-0003",
+            "consumer_type": "commercial",
+            "meter_size": "3/4",
+            "billing_date": "2025-06-01",
+            "usage": 477,
+            "amount": 13356.0
+        },
+        {
+            "id": 54,
+            "name": "IUWS-WM-0004",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-06-01",
+            "usage": 271,
+            "amount": 5555.5
+        },
+        {
+            "id": 55,
+            "name": "IUWS-WM-0005",
+            "consumer_type": "commercial",
+            "meter_size": "1/2",
+            "billing_date": "2025-06-01",
+            "usage": 481,
+            "amount": 16835.0
+        },
+        {
+            "id": 56,
+            "name": "IUWS-WM-0006",
+            "consumer_type": "residential",
+            "meter_size": "3/4",
+            "billing_date": "2025-06-01",
+            "usage": 265,
+            "amount": 5432.5
+        },
+        {
+            "id": 57,
+            "name": "IUWS-WM-0007",
+            "consumer_type": "commercial",
+            "meter_size": "1",
+            "billing_date": "2025-06-01",
+            "usage": 593,
+            "amount": 20755.0
+        },
+        {
+            "id": 58,
+            "name": "IUWS-WM-0008",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-06-01",
+            "usage": 228,
+            "amount": 4674.0
+        },
+
+        {
+            "id": 61,
+            "name": "IUWS-WM-0001",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-07-01",
+            "usage": 268,
+            "amount": 5494.0
+        },
+        {
+            "id": 62,
+            "name": "IUWS-WM-0002",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-07-01",
+            "usage": 231,
+            "amount": 4735.5
+        },
+        {
+            "id": 63,
+            "name": "IUWS-WM-0003",
+            "consumer_type": "commercial",
+            "meter_size": "3/4",
+            "billing_date": "2025-07-01",
+            "usage": 502,
+            "amount": 14056.0
+        },
+        {
+            "id": 64,
+            "name": "IUWS-WM-0004",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-07-01",
+            "usage": 288,
+            "amount": 5904.0
+        },
+        {
+            "id": 65,
+            "name": "IUWS-WM-0005",
+            "consumer_type": "commercial",
+            "meter_size": "1/2",
+            "billing_date": "2025-07-01",
+            "usage": 507,
+            "amount": 17745.0
+        },
+        {
+            "id": 66,
+            "name": "IUWS-WM-0006",
+            "consumer_type": "residential",
+            "meter_size": "3/4",
+            "billing_date": "2025-07-01",
+            "usage": 282,
+            "amount": 5781.0
+        },
+        {
+            "id": 67,
+            "name": "IUWS-WM-0007",
+            "consumer_type": "commercial",
+            "meter_size": "1",
+            "billing_date": "2025-07-01",
+            "usage": 618,
+            "amount": 21630.0
+        },
+        {
+            "id": 68,
+            "name": "IUWS-WM-0008",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-07-01",
+            "usage": 245,
+            "amount": 5022.5
+        },
+
+        {
+            "id": 71,
+            "name": "IUWS-WM-0001",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-08-01",
+            "usage": 261,
+            "amount": 5350.5
+        },
+        {
+            "id": 72,
+            "name": "IUWS-WM-0002",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-08-01",
+            "usage": 224,
+            "amount": 4592.0
+        },
+        {
+            "id": 73,
+            "name": "IUWS-WM-0003",
+            "consumer_type": "commercial",
+            "meter_size": "3/4",
+            "billing_date": "2025-08-01",
+            "usage": 490,
+            "amount": 13720.0
+        },
+        {
+            "id": 74,
+            "name": "IUWS-WM-0004",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-08-01",
+            "usage": 277,
+            "amount": 5678.5
+        },
+        {
+            "id": 75,
+            "name": "IUWS-WM-0005",
+            "consumer_type": "commercial",
+            "meter_size": "1/2",
+            "billing_date": "2025-08-01",
+            "usage": 494,
+            "amount": 17290.0
+        },
+        {
+            "id": 76,
+            "name": "IUWS-WM-0006",
+            "consumer_type": "residential",
+            "meter_size": "3/4",
+            "billing_date": "2025-08-01",
+            "usage": 272,
+            "amount": 5576.0
+        },
+        {
+            "id": 77,
+            "name": "IUWS-WM-0007",
+            "consumer_type": "commercial",
+            "meter_size": "1",
+            "billing_date": "2025-08-01",
+            "usage": 606,
+            "amount": 21210.0
+        },
+        {
+            "id": 78,
+            "name": "IUWS-WM-0008",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-08-01",
+            "usage": 237,
+            "amount": 4858.5
+        },
+
+        {
+            "id": 81,
+            "name": "IUWS-WM-0001",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-09-01",
+            "usage": 243,
+            "amount": 4981.5
+        },
+        {
+            "id": 82,
+            "name": "IUWS-WM-0002",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-09-01",
+            "usage": 208,
+            "amount": 4264.0
+        },
+        {
+            "id": 83,
+            "name": "IUWS-WM-0003",
+            "consumer_type": "commercial",
+            "meter_size": "3/4",
+            "billing_date": "2025-09-01",
+            "usage": 465,
+            "amount": 13020.0
+        },
+        {
+            "id": 84,
+            "name": "IUWS-WM-0004",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-09-01",
+            "usage": 258,
+            "amount": 5289.0
+        },
+        {
+            "id": 85,
+            "name": "IUWS-WM-0005",
+            "consumer_type": "commercial",
+            "meter_size": "1/2",
+            "billing_date": "2025-09-01",
+            "usage": 470,
+            "amount": 16450.0
+        },
+        {
+            "id": 86,
+            "name": "IUWS-WM-0006",
+            "consumer_type": "residential",
+            "meter_size": "3/4",
+            "billing_date": "2025-09-01",
+            "usage": 254,
+            "amount": 5207.0
+        },
+        {
+            "id": 87,
+            "name": "IUWS-WM-0007",
+            "consumer_type": "commercial",
+            "meter_size": "1",
+            "billing_date": "2025-09-01",
+            "usage": 582,
+            "amount": 20370.0
+        },
+        {
+            "id": 88,
+            "name": "IUWS-WM-0008",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-09-01",
+            "usage": 221,
+            "amount": 4530.5
+        },
+
+        {
+            "id": 91,
+            "name": "IUWS-WM-0001",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-10-01",
+            "usage": 225,
+            "amount": 4612.5
+        },
+        {
+            "id": 92,
+            "name": "IUWS-WM-0002",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-10-01",
+            "usage": 191,
+            "amount": 3915.5
+        },
+        {
+            "id": 93,
+            "name": "IUWS-WM-0003",
+            "consumer_type": "commercial",
+            "meter_size": "3/4",
+            "billing_date": "2025-10-01",
+            "usage": 443,
+            "amount": 12404.0
+        },
+        {
+            "id": 94,
+            "name": "IUWS-WM-0004",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-10-01",
+            "usage": 241,
+            "amount": 4940.5
+        },
+        {
+            "id": 95,
+            "name": "IUWS-WM-0005",
+            "consumer_type": "commercial",
+            "meter_size": "1/2",
+            "billing_date": "2025-10-01",
+            "usage": 447,
+            "amount": 15645.0
+        },
+        {
+            "id": 96,
+            "name": "IUWS-WM-0006",
+            "consumer_type": "residential",
+            "meter_size": "3/4",
+            "billing_date": "2025-10-01",
+            "usage": 236,
+            "amount": 4838.0
+        },
+        {
+            "id": 97,
+            "name": "IUWS-WM-0007",
+            "consumer_type": "commercial",
+            "meter_size": "1",
+            "billing_date": "2025-10-01",
+            "usage": 559,
+            "amount": 19565.0
+        },
+        {
+            "id": 98,
+            "name": "IUWS-WM-0008",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-10-01",
+            "usage": 204,
+            "amount": 4182.0
+        },
+
+        {
+            "id": 101,
+            "name": "IUWS-WM-0001",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-11-01",
+            "usage": 204,
+            "amount": 4182.0
+        },
+        {
+            "id": 102,
+            "name": "IUWS-WM-0002",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-11-01",
+            "usage": 174,
+            "amount": 3567.0
+        },
+        {
+            "id": 103,
+            "name": "IUWS-WM-0003",
+            "consumer_type": "commercial",
+            "meter_size": "3/4",
+            "billing_date": "2025-11-01",
+            "usage": 422,
+            "amount": 11816.0
+        },
+        {
+            "id": 104,
+            "name": "IUWS-WM-0004",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-11-01",
+            "usage": 219,
+            "amount": 4489.5
+        },
+        {
+            "id": 105,
+            "name": "IUWS-WM-0005",
+            "consumer_type": "commercial",
+            "meter_size": "1/2",
+            "billing_date": "2025-11-01",
+            "usage": 424,
+            "amount": 14840.0
+        },
+        {
+            "id": 106,
+            "name": "IUWS-WM-0006",
+            "consumer_type": "residential",
+            "meter_size": "3/4",
+            "billing_date": "2025-11-01",
+            "usage": 214,
+            "amount": 4387.0
+        },
+        {
+            "id": 107,
+            "name": "IUWS-WM-0007",
+            "consumer_type": "commercial",
+            "meter_size": "1",
+            "billing_date": "2025-11-01",
+            "usage": 534,
+            "amount": 18690.0
+        },
+        {
+            "id": 108,
+            "name": "IUWS-WM-0008",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-11-01",
+            "usage": 187,
+            "amount": 3833.5
+        },
+
+        {
+            "id": 111,
+            "name": "IUWS-WM-0001",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-12-01",
+            "usage": 189,
+            "amount": 3874.5
+        },
+        {
+            "id": 112,
+            "name": "IUWS-WM-0002",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-12-01",
+            "usage": 159,
+            "amount": 3259.5
+        },
+        {
+            "id": 113,
+            "name": "IUWS-WM-0003",
+            "consumer_type": "commercial",
+            "meter_size": "3/4",
+            "billing_date": "2025-12-01",
+            "usage": 407,
+            "amount": 11396.0
+        },
+        {
+            "id": 114,
+            "name": "IUWS-WM-0004",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-12-01",
+            "usage": 201,
+            "amount": 4120.5
+        },
+        {
+            "id": 115,
+            "name": "IUWS-WM-0005",
+            "consumer_type": "commercial",
+            "meter_size": "1/2",
+            "billing_date": "2025-12-01",
+            "usage": 404,
+            "amount": 14140.0
+        },
+        {
+            "id": 116,
+            "name": "IUWS-WM-0006",
+            "consumer_type": "residential",
+            "meter_size": "3/4",
+            "billing_date": "2025-12-01",
+            "usage": 199,
+            "amount": 4079.5
+        },
+        {
+            "id": 117,
+            "name": "IUWS-WM-0007",
+            "consumer_type": "commercial",
+            "meter_size": "1",
+            "billing_date": "2025-12-01",
+            "usage": 511,
+            "amount": 17885.0
+        },
+        {
+            "id": 118,
+            "name": "IUWS-WM-0008",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2025-12-01",
+            "usage": 172,
+            "amount": 3526.0
+        },
+
+        {
+            "id": 121,
+            "name": "IUWS-WM-0001",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2026-01-01",
+            "usage": 187,
+            "amount": 3833.5
+        },
+        {
+            "id": 122,
+            "name": "IUWS-WM-0002",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2026-01-01",
+            "usage": 154,
+            "amount": 3157.0
+        },
+        {
+            "id": 123,
+            "name": "IUWS-WM-0003",
+            "consumer_type": "commercial",
+            "meter_size": "3/4",
+            "billing_date": "2026-01-01",
+            "usage": 412,
+            "amount": 11536.0
+        },
+        {
+            "id": 124,
+            "name": "IUWS-WM-0004",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2026-01-01",
+            "usage": 203,
+            "amount": 4161.5
+        },
+        {
+            "id": 125,
+            "name": "IUWS-WM-0005",
+            "consumer_type": "commercial",
+            "meter_size": "1/2",
+            "billing_date": "2026-01-01",
+            "usage": 378,
+            "amount": 13230.0
+        },
+        {
+            "id": 126,
+            "name": "IUWS-WM-0006",
+            "consumer_type": "residential",
+            "meter_size": "3/4",
+            "billing_date": "2026-01-01",
+            "usage": 221,
+            "amount": 4530.5
+        },
+        {
+            "id": 127,
+            "name": "IUWS-WM-0007",
+            "consumer_type": "commercial",
+            "meter_size": "1",
+            "billing_date": "2026-01-01",
+            "usage": 530,
+            "amount": 18550.0
+        },
+        {
+            "id": 128,
+            "name": "IUWS-WM-0008",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2026-01-01",
+            "usage": 176,
+            "amount": 3608.0
+        },
+
+        {
+            "id": 131,
+            "name": "IUWS-WM-0001",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2026-02-01",
+            "usage": 195,
+            "amount": 3997.5
+        },
+        {
+            "id": 132,
+            "name": "IUWS-WM-0002",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2026-02-01",
+            "usage": 162,
+            "amount": 3321.0
+        },
+        {
+            "id": 133,
+            "name": "IUWS-WM-0003",
+            "consumer_type": "commercial",
+            "meter_size": "3/4",
+            "billing_date": "2026-02-01",
+            "usage": 389,
+            "amount": 10892.0
+        },
+        {
+            "id": 134,
+            "name": "IUWS-WM-0004",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2026-02-01",
+            "usage": 218,
+            "amount": 4469.0
+        },
+        {
+            "id": 135,
+            "name": "IUWS-WM-0005",
+            "consumer_type": "commercial",
+            "meter_size": "1/2",
+            "billing_date": "2026-02-01",
+            "usage": 401,
+            "amount": 14035.0
+        },
+        {
+            "id": 136,
+            "name": "IUWS-WM-0006",
+            "consumer_type": "residential",
+            "meter_size": "3/4",
+            "billing_date": "2026-02-01",
+            "usage": 209,
+            "amount": 4284.5
+        },
+        {
+            "id": 137,
+            "name": "IUWS-WM-0007",
+            "consumer_type": "commercial",
+            "meter_size": "1",
+            "billing_date": "2026-02-01",
+            "usage": 515,
+            "amount": 18025.0
+        },
+        {
+            "id": 138,
+            "name": "IUWS-WM-0008",
+            "consumer_type": "residential",
+            "meter_size": "1/2",
+            "billing_date": "2026-02-01",
+            "usage": 183,
+            "amount": 3751.5
+        }
+    ]
+}
