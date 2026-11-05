@@ -1,0 +1,1260 @@
+# Layout and UI Components
+layout:
+  logout: Logout
+  login:
+    title: Log in to your account
+    remember_me: Remember Me
+    forgot_password: Forgot Password?
+    contact_administrator: Contact the administrator for assistance with resetting your password.
+    help_manual: Help and Manual
+  role:
+    super admin: Super Admin
+    admin: Admin
+    crew: Crew
+    staff: Staff
+  impersonation:
+    viewing_as: Viewing as
+    exit_session: Exit Session
+  footer:
+    company_name: Tensei Philippines Inc. © 2022
+  pagination:
+    prev: Prev
+    next: Next
+    item: "Showing { start } - { end } of { total } items"
+  appearance:
+    light: light
+    dark: dark
+
+# Navigation
+navigation:
+  label:
+    overview: Overview
+    control: Controls
+    hospitality: Hospitality
+    management: Management
+    devices: Devices
+    apps: Apps
+  admin:
+    dashboard: Dashboard
+    room_monitoring: Room Monitoring
+    room_management: Room Management
+    electric_monitoring: Electric Monitoring
+    climate: Climate
+    switches: Switches
+    plugs: Plugs
+    rooms: Rooms
+    remote_lock: RemoteLock
+    lorawan: LoRaWAN
+    lorawan_gateway: Gateways
+    lorawan_device: Devices
+    switch_bot: SwitchBot
+    switch_bot_account: Accounts
+    switch_bot_hub: Hubs
+    switch_bot_device: Devices
+    switch_bot_remote: Remotes
+    corsight: Corsight
+    corsight_account: Accounts
+    corsight_device: Devices
+    corsight_person: People
+    logs: Logs
+    account_management: Accounts
+    admins: Admins
+    users: Users
+    settings: Settings
+    account_info: Account Information
+    view_as_role: View as Role
+    profile: Profile
+    password: Password
+    display: Display
+    role: Roles
+    scene: Scenes
+    general: General
+    system: System
+    rate: Rates
+    files: Files
+    water_billing: Water Billing
+    climate_analytics: Climate Analytics
+  crew:
+    order_history: Order History
+    food_menu: Food Menu
+  staff:
+    promos: Promos
+    amenities: Amenities
+  user:
+    dashboard: Dashboard
+    amenities: Amenities
+    promos: Promos
+    restaurant: Restaurant
+    calendar: Calendar
+    washing_machine_1: Electrolux Life
+    vacuum_cleaner: LG Thinq
+    cctv: Axis
+    curtain: Smart Life
+    sos: SOS
+  notification: Notifications
+
+# Page Headers
+head:
+  dashboard: Dashboard
+  dashboard_device: Room Devices
+  climate_analytics: Climate Analytics
+  room_monitoring: Room Monitoring
+  electric_monitoring: Electric Monitoring
+  switch_monitoring: Switch Monitoring
+  climate_monitoring: Climate Monitoring
+  plug_monitoring: Plug Monitoring
+  room_management: Room Management
+  remote_lock_management: RemoteLock Management
+  lorawan_devices: Lorawan Device
+  lorawan_gateway: Lorawan Gateway
+  switch_bot_account: SwitchBot Account
+  switch_bot_device: SwitchBot Device
+  switch_bot_hub: SwitchBot Hub
+  switch_bot_remote: SwitchBot Remote
+  corsight_account: Corsight Account
+  corsight_device: Corsight Device
+  corsight_person: People
+  logs: Activity Log
+  admin_management: Admin
+  user_management: Users
+  general_settings: Settings
+  password_settings: Password Settings
+  profile_settings: Profile Settings
+  display_settings: Display Settings
+  scene_management: Scene Management
+  front_desk: Front Desk
+  room_overview: Room Overview
+  amenity: Amenity
+  aircon_temperature: Aircon Temperature
+  orders: Orders
+  food_menu: Food Menu
+  promo: Promos
+  restaurant: Restaurant
+  order_history: Food Order History
+  reset_password: Reset Password
+  water_billing_report: Water Billing & Reports
+
+# Actions
+action:
+  sign_in: Sign In
+  add: Add
+  create: Create
+  update: Update
+  delete: Delete
+  save: Save Changes
+  apply: Apply
+  apply_changes: Apply Changes
+  sync: Sync
+  import: Import
+  copy: Copy
+  checkout: Checkout
+  place_order: Place An Order
+  clear_items: Clear All Items
+  reset: Reset
+  cancel: Cancel
+  close: Close
+  dismiss: Dismiss
+  send_alert: Send Alert
+  mark_as_resolved: Mark as Resolved
+  back: Back
+  go_back: Go Back
+  more: More
+  details: Details
+  discover_more: Discover More
+  show: Show
+  no_thanks: No thanks
+  hide: Hide
+  view: View
+  never_show_again: Never show again
+  show_less: Show Less
+  show_more: Show More
+  show_more_or_less: Show More/Less
+  loading: Loading…
+  add_rate: Add Rate
+  click_download: Click to download
+  restore: Restore
+  viewing: Viewing
+  archive: "{ state } Archived"
+  download: Download { file_type }
+  back_to_home_page: Back to Home Page
+  change_password: Change Password
+  login: Log in
+  cancel_order: Cancel Order
+  confirm_cancellation: Confirm
+
+# Operations
+operation:
+  search: Search
+  action: Actions
+  template: Get Template
+  import: Import
+  export: Export
+  filter: Filters
+
+category:
+  all_room: All Rooms
+  all_floor: All Floors
+  all_role: All Roles
+  all_category: All Categories
+  all_status: All Status
+  all_location: All Locations
+
+filter:
+  select_all: Select All
+  select_item: Select Item
+  select_origin_type: Select Origin Type
+  select_severity: Select Severity
+  select_aircon: Select Aircons
+  view_all: View All
+  view_user: View Users
+  view_device: View Devices
+  select_meter: Select Energy Meters
+  select_date_range: Select Date Range
+  select_month: Select Month
+  over_all: Overall
+  per_phase: Per Phase
+  distinct_phase: Distinct Phase
+  between_phase: Between Phase
+  select_devices: Select Devices
+  select_rooms: Select Room
+  select_areas: Select Area
+
+date_range_filter:
+  6_hour: 6 hours
+  12_hour: 12 hours
+  1_day: 1 day
+  3_month: 3 months
+  6_month: 6 months
+  1_year: 1 year
+  today: Today
+  last_2_days: Last 2 days
+  last_7_days: Last 7 days
+  last_30_days: Last 30 days
+  6_hrs: 6H
+  1_d: 1D
+  1_w: 1W
+  1_m: 1M
+  this_month: This Month
+  this_quarter: This Quarter
+  last_quarter: Last Quarter
+  this_year: This Year
+  last_year: Last Year
+  current_month: Current Month
+  last_month: Last Month
+  start_date: Start Date
+  end_date: End Date
+  custom: Custom
+
+label:
+  default: Default
+  show_more: Show More
+  show_less: Show Less
+  new: New
+  outdated: Outdated
+  updated: Updated
+  latest: Latest
+  default_rate: Default Rate
+  report: Report
+  months: Month/s
+  active: Active
+  inactive: Inactive
+  on: On
+  off: Off
+  monitoring: Monitoring
+  energy: Energy
+
+unit:
+  kwh: kWh
+  a: A
+  v: V
+  kw: kW
+  kwh_day: kWh/day
+  per_kwh: per kWh
+  kg: kg
+  kg_day: kg/day
+  metric_ton: Metric Ton
+  kg_c02_per_kwh: kg CO2 per kWh
+  target_kwh_month: "Target: {target} kWh/month"
+  tons_co2e: tons CO₂e
+  kg_co2: kg CO₂
+  kg_kwh: kg/kWh
+
+# States and Status
+state:
+  empty: No data available at the moment.
+  no_uplink: No uplink data
+  no_data: No data
+  no_configuration: No Configuration Available
+  loading:
+    title: Scanning Devices
+    description: This may take a few minutes.
+  error: An unexpected error occurred.
+
+status:
+  processed: Processed
+  successful: Successful
+  unsuccessful: Unsuccessful
+  active: Active
+  inactive: Inactive
+  vacant: Vacant
+  occupied: Occupied
+  closed: Closed
+  open: Open
+  in_stock: In Stock
+  resolved: Resolved
+  try_again: Try again
+  wait: Please wait...
+  excellent: Excellent
+  good: Good
+  fair: Fair
+  poor: Poor
+
+toast:
+  header:
+    report_progress: Report in Progress
+  body:
+    report_description: "This may take a moment. You'll be notified when it's done"
+
+# Device Related
+device:
+  controls:
+    power: Power
+    mode: Mode
+    fan_speed: Fan Speed
+    temp: Temp
+    room_temp: Room Temp
+    mute: Mute
+    freeze: Freeze
+    zoom: Zoom
+    channel: Channel
+    vol: Vol
+    home: Home
+    back: Back
+  telemetry:
+    entry: Entry
+    exit: Exit
+    peak_visitors: Peak Visitors
+    current_visitors: Current Visitors
+    motion_detected: Motion Detected
+    no_motion: No Motion
+    temperature: Temperature
+    humidity: Humidity
+    co2: CO2 Level
+    illuminance: Illuminance
+  aircon:
+    set_point: Set Point
+  lorawan:
+    phase_a: Phase A Alias
+    phase_b: Phase B Alias
+    phase_c: Phase C Alias
+    switch_1: Control 1 Alias
+    switch_2: Control 2 Alias
+    switch_3: Control 3 Alias
+    operation: Workplace Sensor Operation
+    slave_id: Slave ID
+    slave_model: Slave Model
+
+# Forms
+form:
+  label:
+    current_password: Current Password
+    new_password: New Password
+    confirm_password: Confirm Password
+    room_name: Room Name
+    room_number: Room Number
+    floor_name: Floor Name
+    room_area: Room Area
+    external_apps: External Apps
+    email_address: Email Address
+    email: Email
+    password: Password
+    access_token: Access Token
+    secret_key: Secret Key
+    webhook: Webhook
+    corsight_username: Fortify Username
+    corsight_password: Fortify Password
+    endpoint_secret: Endpoint Secret
+    endpoint_url: Endpoint URL
+    camera_id: Camera ID
+    event_type: Event Type
+    date_from: Date From
+    date_to: Date To
+    date_range: Date Range
+    name: Name
+    username: Username
+    role: Role
+    access_pin: Access Pin
+    role_name: Role Name
+    guard_name: Guard Name
+    permission: Permissions
+    device_name: Device Name
+    hub_name: Hub Name
+    dev_eui: Device EUI
+    manufacturer: Manufacturer
+    model: Model
+    gateway: Gateway
+    room_access: Room Accesses
+    permanent: Permanent
+    start_access: Start Access
+    end_access: End Access
+    add_new_access: Add new access
+    add_room_new_access: "Add {room} Access"
+    update_room_new_access: "Update {room} Access"
+    delete_room_access: Delete Room Access
+    connection: LoRaWAN Connection
+    empty_selection: No Items Available
+    your_orders: Your Orders
+    order_history: Order History
+    no_access: No Access Users
+    food_name: Food Name
+    description: Description
+    category: Category
+    price: Price
+    ip_address: IP Address
+    mac_address: MAC Address
+    additional_info: Additional Information
+    additional_details: Additional Details
+    add_new_info: Add New Additional Information
+    amenity_title: Title
+    amenity_description: Description
+    amenity_category: Category
+    amenity_photos: Amenity Photos
+    icon_theme: Icon Theme
+    scene_name: Scene Name
+    time: Time
+    schedule: Schedules
+    color: Color
+    icon: Icon
+    scheduled: Scheduled
+    manual: Manual
+    everyday: Everyday
+    custom: Custom
+    repeat: Repeat
+    smart_devices: Smart Devices
+    add_devices: Add more devices
+    title: Title
+    validity_period: Validity Period
+    promo_title: Promo Title
+    device_information: Device Information
+    enable_storage: Enable Storage
+    language: Language
+    appearance: Appearance
+    availability: Availability
+    month: Month
+    rate_per_kwh: Rate per kWh (₱)
+    consumer_type: Consumer Type
+    meter_size: Meter Size
+    effective_date: Effective Date
+    notes: Notes
+    consumption_rates: Consumption Rates
+    file_name: File Name
+    generated_by: Generated By
+    reset_link: Reset Link
+  placeholder:
+    room_name: Select Room Name
+    room_number: Enter Room Number
+    floor_name: Enter Floor Name
+    select_floor: Select Floor Name
+    room_area: Enter Room Area
+    select_room_area: Select Room Area
+    email_address: Enter Email Address
+    email: Enter Email
+    password: Enter Password
+    access_token: Enter Access Token
+    secret_key: Enter Secret Key
+    webhook: Enter Webhook
+    corsight_username: e.g., ibms-integration
+    corsight_password: Enter Fortify user password
+    endpoint_secret: Enter shared endpoint secret
+    endpoint_url: Enter shared endpoint URL
+    camera_id: Copy from Fortify web client - Cameras
+    event_type: All Types
+    camera: All Cameras
+    camera_role: All Roles
+    name: Enter Name
+    username: Enter Username
+    role: Select Role
+    access_pin: Enter Access Pin
+    role_name: Enter Role Name
+    guard_name: Select Guard Name
+    permission: Type To Search Permissions
+    hub_name: Enter Hub Name
+    ip_address: Enter IP Address
+    mac_address: Enter MAC Address
+    enter_device_name: Enter Device Name
+    device_name: Select Device Name
+    enter_device_eui: Enter Device EUI
+    manufacturer: Select Manufacturer
+    model: Select Model
+    gateway: Select Gateway
+    room: Select Room
+    connection: Select Connection
+    amenity_title: Enter Title
+    amenity_description: Enter Description
+    amenity_category: Select Category
+    amenity_attribute_name: Enter Attribute Name
+    amenity_attribute_description: Enter Attribute Description
+    color_icon: Select Color & Icon
+    scene_name: Enter Scene Name
+    food_name: Enter Food Name
+    food_description: Enter Food Description
+    category: Select Category
+    price: Enter Price
+    title: Enter Title
+    description: Enter Description
+    start_date: Select Start Date
+    end_date: Select End Date
+    date: Select Date
+    rate_per_kwh: Rate per kWh
+    consumer_type: Select Consumer Type
+    meter_size: e.g., 1/2
+    meter_size_select: Select Meter Size
+    month: Select Month
+    notes: e.g., Standard residential tier 1 rate
+    reset_link: Reset Link
+    new_password: Enter New Password
+    confirm_password: Confirm New Password
+  validation:
+    role_name: Role name does not match or role name is missing.
+    password: Password confirmation
+
+# Errors
+error:
+  server_error: Whoops! Something went wrong.
+  admin_update_status_failed: Failed to update admin status.
+  connection_waiting: Waiting for connection.
+  unable_to_import: Unable to import file. Please try again.
+  temperature_data: Failed to load temperature data.
+
+tooltip:
+  offline_note: "Note: High consumption may reflect accumulated usage"
+  offline_duration: "Device offline for"
+  unattributed_cost: "Unattributed Cost Included"
+  unattributed_cost_message: "₱ {cost} unattributed cost from meter gap periods is included in the total"
+
+# Modals
+modal:
+  action:
+    delete_floor: Delete Floor
+    add_room: Add Room
+    update_room: Edit Room
+    delete_room: Delete Room
+    import_room: Import Room
+    add_gateway: Add Gateway
+    add_lorawan_devices: Add LoRaWAN Devices
+    add_lorawan_gateway: Add LoRaWAN Gateway
+    update_lorawan_gateway: Update LoRaWAN Gateway
+    delete_lorawan_gateway: Delete LoRaWAN Gateway
+    import_lorawan_gateway: Import Lorawan Gateway
+    update_lorawan_device: Update LoRaWAN Device
+    delete_lorawan_device: Delete LoRaWAN Device
+    import_lorawan_device: Import Lorawan Device
+    update_gateway: Edit Gateway
+    delete_gateway: Delete Gateway
+    add_account: Add Account
+    update_account: Edit Account
+    delete_account: Delete Account
+    add_switch_bot_account: Add SwitchBot Account
+    update_switch_bot_account: Update SwitchBot Account
+    delete_switch_bot_account: Delete SwitchBot Account
+    import_switch_bot_account: Import SwitchBot Account
+    add_corsight_account: Add Corsight Account
+    update_corsight_account: Update Corsight Account
+    delete_corsight_account: Delete Corsight Account
+    add_corsight_device: Add Corsight Device
+    update_corsight_device: Update Corsight Device
+    delete_corsight_device: Delete Corsight Device
+    device_configuration: Device Configuration
+    add_device: Add Device
+    view_event: View Event
+    add_switch_bot_hub: Add SwitchBot Hub
+    update_switch_bot_hub: Update SwitchBot Hub
+    delete_switch_bot_hub: Delete SwitchBot Hub
+    update_switch_bot_device: Update SwitchBot Device
+    update_switch_bot_remote: Update SwitchBot Remote
+    add_admin: Add Admin
+    add_admin_account: Add Admin Account
+    update_admin: Edit Admin
+    update_admin_account: Update Admin Account
+    delete_admin: Delete Admin
+    delete_admin_account: Delete Admin Account
+    add_user: Add User
+    update_user: Edit User
+    delete_user: Delete User
+    add_role: Add Role
+    update_role: Edit Role
+    delete_role: Delete Role
+    add_scene: Add Scene
+    update_scene: Update Scene
+    delete_scene: Delete Scene
+    add_amenity: Add Amenity
+    update_amenity: Update Amenity
+    delete_amenity: Delete Amenity
+    add_new_food: Add New Food
+    add_menu: Add Menu
+    edit_menu: Edit Menu
+    delete_menu: Delete Menu
+    add_promo: Add Promo
+    update_promo: Edit Promo
+    delete_promo: Delete Promo
+    add_devices: Add Devices
+    edit_device: Edit Device
+    delete_device: Delete Device
+    scene_device_selection: Scene Device Selection
+    scene_device_control: Scene Device Control
+    emergency_alert: Emergency Alert
+    configurations: Configurations
+    send_alert: Send Alert
+    view: View
+    dismiss: Dismiss
+    add_rate: Add New Rate
+    download_file: Download File
+    delete_file: Delete File
+    restore_file: Restore File
+    delete_permanently: Delete Permanently
+    permanently_delete_file: Permanently Delete File
+    delete_rate: Delete Rate
+    update_rate: Update Rate
+  title:
+    switch_bot_device_scan: SwitchBot Device Scan Overview
+    switch_bot_hub_scan: SwitchBot Hub Scan Overview
+    switch_bot_device_scan_result: Device Scan Results
+    switch_bot_hub_scan_result: Hub Scan Results
+    switch_bot_remote_scan: Switch Remote Scan Overview
+    switch_bot_remote_scan_result: Remote Scan Results
+    scene_detail: Scene Details
+    scene_schedule: Schedule Settings
+    import_summary: Import Summary
+    success_rate: Success Rate
+    failed_imports: Failed Imports
+  description:
+    switch_bot_device_scan_result: Here is an overview of the scanned device records. Kindly review the details provided below and take the necessary actions.
+    switch_bot_hub_scan_result: Here is an overview of the scanned hub records. Kindly review the details provided below and take the necessary actions.
+    switch_bot_remote_scan_result: Here is an overview of the scanned remote records. Kindly review the details provided below and take the necessary actions.
+    scene_description: Automate actions for your smart devices by scheduling scenes.
+    amenity_description: You may add additional attributes (e.g. telephone, schedules, location)
+    issuance_message: The issuance of the switch bot lock PIN may take up to 5 minutes. Please wait for a notification indicating when the issued PIN becomes active.
+    rate_description: Set electricity rate for a specific month.
+  hint:
+    amenity_photos: You may include up to 5 photos.
+    webhook_found: Webhook has been found.
+    failed_accounts_note: The accounts below could not be scanned. Resolve the issue shown for each account, or skip them and continue.
+  confirm:
+    warning: "Warning: This action is permanent and cannot be undone."
+    role_name_input: "Please type in the role name to confirm"
+    delete_switch_bot_account: Are you sure you want to delete this SwitchBot account?
+    delete_corsight_account: Are you sure you want to delete this Corsight account?
+    delete_corsight_device: Are you sure you want to delete this Corsight device?
+    delete_room: Are you sure you want to delete this room?
+    delete_floor: Are you sure you want to delete this floor?
+    delete_user: Are you sure you want to delete this user?
+    delete_role: Are you sure you want to delete this role?
+    delete_device: Are you sure you want to delete this Lorawan device?
+    delete_device_body: "Warning: This action is permanent and cannot be undone."
+    delete_lorawan_gateway: Are you sure you want to delete this Lorawan Gateway?
+    delete_room_access: Are you sure you want to delete this user's room access?
+    delete_admin: Are you sure you want to delete this admin?
+    delete_amenity: Are you sure you want to delete this amenity?
+    delete_scene: Are you sure you want to delete this scene?
+    delete_menu: Are you sure you want to delete this menu?
+    delete_promo: Are you sure you want to delete this promo?
+    emergency_body: You are about to trigger an emergency alert. Are you sure you want to proceed?
+    emergency_admin_body: "Emergency situation triggered in room {room}. Immediate assistance is required."
+    delete_water_rate: Are you sure you want to delete this water rate?
+    delete_file: Are you sure you want to delete this file?
+    delete_file_permanently: Are you sure you want to permanently delete this file?
+    restore_file: Are you sure you want to restore this file to active files?
+    delete_info: "Note: It won't be permanently deleted and will be kept in the archived folder."
+    delete_input: "Please enter the word DELETE to confirm."
+  alert:
+    floor_error: Unable to Delete Floor
+    lorawan_gateway_error: Unable to Delete Gateway
+    room_assigned: A room is still assigned to this floor.
+    no_successful_import: No Successful Imports.
+    room_error: Unable to Delete Room.
+    device_registered: There are Lorawan devices registered to this room.
+    room_monitoring_no_devices: No devices found in this room. Add devices to get started
+    no_room_selected: No room selected.
+    no_devices_in_room: No devices found in this room.
+    data_store_info: Data is stored locally for historical analysis and reporting.
+    rate_alert: Regularly update your rates to ensure accurate cost calculations.
+
+# Tables
+table:
+  header:
+    num: No.
+    username: Username
+    name: Name
+    access_status: Access Status
+    room_name: Room Name
+    room_number: Room Number
+    floor_name: Floor Name
+    room_area: Room Area
+    email: Email
+    dev_eui: Device EUI
+    gateway: Gateway
+    ip_address: IP Address
+    mac_address: MAC Address
+    connection: Connection
+    auth_cred: Auth Credentials
+    corsight_username: Fortify Username
+    endpoint_url: Endpoint URL
+    camera_id: Camera ID
+    enable_storage: Data Storage
+    last_synced_at: Last Synced At
+    received_at: Received At
+    event_type: Event Type
+    event_id: Event ID
+    face_crop: Face Crop
+    camera: Camera
+    photo: Photo
+    appearance_id: Appearance ID
+    last_seen_at: Last Seen
+    enter_at: Entered
+    exit_at: Exited
+    dwell: Dwell Time
+    gender: Gender
+    age_group: Age Group
+    security: Security
+    code: Code
+    severity: Severity
+    timestamp: Timestamp
+    originated_by: Originated By
+    originated_type: Origin Type
+    description: Description
+    role_name: Role Name
+    guard_name: Guard Name
+    permissions: Permissions
+    last_updated: Last Updated At
+    role: Roles
+    activation: Activation
+    device_name: Device Name
+    device_type: Device Type
+    serial_num: Serial Number
+    battery_level: Battery Level
+    hub_name: Hub Name
+    name_on_app: Name on App
+    amenity_description: Description
+    category: Category
+    visibility: Visibility
+    model: Model
+    controls: Controls
+    active_device: Active Devices
+    people_count: People Count
+    title: Title
+    validity_period: Validity Period
+    user: User
+    status: Status
+    switch_bot_lock_status: SwitchBot Lock Status
+    date: Date
+    temperature: Temperature
+    scene_name: Scene Name
+    device_involved: Device Involved
+    trigger: Trigger
+    type: Type
+    item: Item
+    price: Price
+    availability: Availability
+    document: Document
+    size: Size
+    generated_by: Generated By
+    days_left: Days Left
+    consumer_type: Consumer Type
+    meter_size: Meter Size
+    effective_date: Effective Date
+    tiers: Tiers
+    charges: Charges
+    min: Min
+    max: Max
+    meter: Meter
+    usage: Usage
+    rate_per_m3: Rate per m³
+    amount: Amount
+    month: Month
+    avg_meter: Avg/Meter
+    failed_accounts: Failed Accounts
+    consumption: Consumption
+    co2_emissions: CO2 Emissions
+    excess_emissions: Excess Emissions
+    potential_savings: Potential Savings
+    daily_average: Daily Average
+    metric: Metric
+    current: Current
+    previous: Previous
+    change: Change
+    total_cost: Total Cost
+    cost_kwh: Cost/kWh
+  body:
+    not_configured: Not yet configured
+    set_point: Set point
+    cubic_meter: Cubic Meters
+    total_consumption: Total Consumption
+    average_daily_usage: Average Daily Usage
+
+# Pages
+page:
+  corsight_account:
+    env_snippet:
+      title: Listener Environment Snippet
+      subtitle: Add these lines to the listener's environment file on the appliance
+      username: Fortify user for the listener
+      endpoint_url: iBMS endpoint that receives the events
+      endpoint_secret: Shared secret used to sign the events
+  corsight_device:
+    hint:
+      name_match: The name must match the camera's label in Fortify, it is used to link incoming events.
+      data_storage: When off, events from this camera are still received but not stored.
+    status:
+      inactive: Inactive
+  corsight_person:
+    counter:
+      in_now: In Now
+      security: Security
+      entries: Entries
+      exits: Exits
+    filter:
+      security_only: Security Only
+      in_now: In Now
+      all_camera: All Cameras
+      all_role: All Roles
+    role:
+      general: General
+      entry_point: Entry Point
+      exit_point: Exit Point
+      passage: Passage
+    status:
+      in: In
+      exited: Exited
+      abandoned: Abandoned
+    trigger:
+      start: Appearance Start
+      forced_update: Forced Update
+      end: Appearance End
+      periodic: Periodic Update
+    label:
+      watchlist_hit: Watchlist
+      face_score: Face Score
+      liveness: Liveness
+      mask: Mask
+      matched_person: Matched Person
+      match_confidence: Match confidence
+      watchlists: Watchlists
+      repeated_alert: repeated
+      copy: Copy
+      copied: Copied
+    match_outcome:
+      matched: Matched
+      not_determined: Not Determined
+      unknown: Unknown
+    detail:
+      title: Person Visit
+      visit_details: Visit Details
+      security_alert: Security Alert
+      trail_title: Event Trail
+      event_count: "{count} appearance events"
+      trail_subtitle: Appearance events recorded for this visit
+      trail_empty: No appearance events recorded for this visit.
+  notification:
+    mark_as_read: Mark as read
+    no_notifications: No Notifications yet.
+    we_will_notify_you: We will notify you when something arrives.
+  admin_dashboard:
+    header:
+      device_status: Device Status
+      device_status_subtitle: Devices Needing Attention
+      device_summary: Device Summary
+      device_summary_subtitle: Current Active Devices by Category
+      electricity_consumption: Electricity Consumption Overview
+      electricity_consumption_subtitle: Total Cost Based on Meter Readings
+      room_monitoring: Room Monitoring Overview
+      activity: Recent Activity
+      monthly_cost: Monthly Energy Cost Overview
+      monthly_cost_subtitle: Daily Energy Cost
+      monthly_consumption: Monthly Consumption
+      hourly_consumption: Hourly Consumption
+      environment_record: Environmental Sensor Records
+      environment_record_subtitle: Current Room Conditions
+      visitor_trend: Weekly Visitor Trend
+      active_machine: Electric Meter Active Machines
+      carbon_tracker: Carbon Tracker
+      all_electric_meter: All Electric Meters
+      all_electric_meter_subtitle: Track real-time energy usage across all locations.
+      power_factor: Power Factor
+      power_factor_subtitle: Per-meter Breakdown
+      fleet_average: Fleet Average
+      fleet_average_subtitle: All meters combined
+    label:
+      device: Total Devices
+      account: Total Accounts
+      gateway: Total Gateways
+      room: Total Rooms
+      total_visitor: Total Visitors
+      daily_visitor: Daily Visitors
+      visitor: Visitor Over Time
+      active: Active
+      sync: Synced
+      vacant: Vacant
+      occupied: Occupied
+      last_seen: Last seen at
+      last_uplink: Last Data Uplink
+      last_updated: Last Updated At
+      than_last_month: than last month
+      phase: Phase
+      hour: Hour
+      month: Month
+      day: Day
+      meter: Meter
+      selected_meter: Selected Meters
+      price_vary: "*Estimated cost only. Actual bill may vary."
+      active_meter: active meters
+      grid_factor: Grid factor
+      monthly_target: Monthly Target
+      meter_breakdown: Meter Breakdown
+      remaining: remaining
+      vs_last_mo: vs last mo.
+      current: Current
+      voltage: Voltage
+      consumption: Consumption
+    energy:
+      no_rate_title: No electricity rate set
+      no_rate_message: kWh data is available but cost cannot be calculated. Set a rate to enable cost tracking.
+      set_rate_button: Rate Settings
+  water_monitoring:
+    header:
+      water_consumption: Water Consumption
+      water_consumption_subtitle: Daily usage over the past week
+      top_consumers: Top Consumers
+      top_consumers_subtitle: Highest usage today
+      all_water_meters: All Water Meters
+      all_water_meters_subtitle: Overview of device status, consumption metrics, and estimated costs.
+    label:
+      today_usage: Total Usage Today
+      today_usage_subtitle: Across all meters
+      weekly_avg: Weekly Average
+      weekly_avg_subtitle: "Per day: 748 m³"
+      monthly_total: Current Month Bill
+      monthly_total_subtitle: "Estimated Total"
+      active_meter: Active Meters
+      active_meter_subtitle: "All operational"
+      usage: Usage
+      today: Today
+      flow_rate: Flow Rate
+      estimated_bill: "Est. Bill"
+  water_billing_report:
+    header:
+      billing_summary: Monthly Billing Summary
+      billing_summary_subtitle: Manage your water billing
+      rate_structure: Water Rate Structure
+      rate_structure_subtitle: View and manage your water rate tiers
+      billing_history: Billing History
+      billing_history_subtitle: View past bills and payment history
+    label:
+      total_cost: Total Cost
+      average_usage: Average Usage
+      overview: Overview
+      monthly_data: Monthly Data
+      avg_monthly_cost: Average Monthly Cost
+      avg_consumption: Average Consumption
+      6_month_summary: "{count} Month Summary"
+      total_usage: Total Usage
+      vs_last_period: "{percentage}% vs last period"
+      total_usage_description: Total water usage this month
+      total_cost_description: Total estimated billed this month
+      average_usage_description: Average usage per meter
+  electric_monitoring:
+    header:
+      voltage: Voltage
+      current: Current
+      insight: Insights
+    label:
+      last_uplink: Last Data Uplink
+      total_consumption: Total Consumption
+      consumption: Consumption
+      total_current: Total Current
+      avg_phase_voltage: Average Phase Voltage
+      avg_neutral_voltage: Average Neutral Voltage
+      total_power: Total Power
+      total_power_factor: Total Power Factor
+      generate_report: Generate Report
+    filter:
+      add_filter: Add Filter
+    download:
+      png: Download as PNG
+      svg: Download as SVG
+      csv: Download as CSV
+    status:
+      excellent: Excellent
+      acceptable: Acceptable
+      warning: Warning
+      critical: Critical
+    description:
+      current_excellent: Well-balanced system. Optimal efficiency.
+      current_acceptable: Acceptable range. Consider load redistribution.
+      current_critical: Critical imbalance. Redistribute loads immediately.
+      voltage_excellent: No motor derating required. Optimal performance.
+      voltage_acceptable: Within acceptable limits. Monitor regularly.
+      voltage_warning: Motor derating required. Take corrective action.
+      voltage_critical: Immediate action required. Equipment at risk.
+    insights:
+      current:
+        title: Current Balance
+        good: Phase currents balanced at {value}%. Even load distribution ensures optimal meter accuracy.
+        warning: Phase imbalance at {value}%. May affect metering precision and energy consumption data accuracy.
+        critical: Severe imbalance at {value}%. Critical measurement errors. Verify load connections and phase assignments immediately.
+      power_factor:
+        title: Power Factor
+        good: Power factor at {value}. Excellent reactive power management with minimal demand charges.
+        warning: Power factor at {value}. Suboptimal levels may result in additional demand charges and reduced capacity.
+        critical: Power factor at {value}. Poor performance causing significant demand penalties and potential limit violations.
+      voltage:
+        title: Voltage Balance
+        good: Voltage deviation at {value}%. All phases stable. Meter measuring accurately under normal conditions.
+        warning: Voltage deviation at {value}%. Imbalance may indicate supply issues or incorrect transformer ratios.
+        critical: Voltage deviation at {value}%. Severe imbalance risks meter malfunction and incorrect energy recording.
+      frequency:
+        title: Frequency Stability
+        good: Frequency stable at {value} Hz. Grid synchronized. Meter operating within calibrated range.
+        warning: Frequency at {value} Hz. Minor instability may affect demand interval calculations.
+        critical: Frequency at {value} Hz. Outside meter specifications. Risk of measurement errors and data logging failures.
+  electric_monitoring_report:
+    header:
+      company_name: Company Name
+      reporting_period: Reporting Period
+      generated_date: Generated Date
+      carbon_footprint_breakdown: Detailed Carbon Footprint Breakdown
+      emission_summary: Emissions Summary
+      weekly_emission_trend: Weekly Emissions Trend
+      current_consumption_metric: Current Consumption Metrics
+      monthly_breakdown: Monthly Breakdown
+      hourly_energy_trend: Hourly Energy Usage Trend
+      monthly_consumption: Monthly Consumption Comparison
+      energy_overview: Energy Overview
+      energy_breakdown: Energy Consumption Breakdown
+      energy_patterns: Energy Consumption Patterns
+      carbon_footprint: Carbon Footprint Analysis
+      energy_cost: Energy Cost Analysis
+      weekly_cost_trend: Weekly Cost Trend
+      disclaimers: Disclaimers
+    description:
+      energy_breakdown: This breakdown highlights the distribution of energy usage across different meters and operational areas.
+      energy_patterns: This compares the current energy usage to previous periods and analyzes consumption patterns across different time intervals.
+      carbon_footprint: This section covers the total CO2 emissions based on energy usage and highlights the reduction compared to the previous month.
+      energy_cost: An overview of the monthly energy costs, with a breakdown of total costs, consumption, and cost per kWh.
+    label:
+      total_co2_emissions: Total CO2 Emissions
+      carbon_intensity: Carbon Intensity
+      grid_emission_factor: (Grid Emission Factor)
+      previous_period: Previous Period
+      reduction: "% reduction"
+      last_days_from_end: (Last { days } days from end date)
+      current_effective_rate: "Current Effective Rate: ₱{ value }/kWh"
+      total_consumption: Total Consumption
+      total_cost: Total Cost
+      carbon_footprint: Carbon Footprint
+      selected_meter: Selected Meters
+      days: day/s
+    status:
+      processing: Report generation is in progress.
+      completed: The report has been successfully generated.
+      error: An error occurred while generating the report.
+    note:
+      footer_data_collected: This report is generated based on data collected from energy monitoring devices installed at the facility.
+      footer_carbon_emission: Carbon emissions are calculated using the Philippines grid average emission factor of {carbon} kg CO₂/kWh.
+      footer_cost_estimates: Cost estimates are based on current utility rates and may vary based on actual billing.
+      footer_power_quality: Power quality data reflects actual conditions during the reporting period only.
+  activity_log:
+    label:
+      filter: Add Filters
+      severity: Severity
+      origin_type: Origin Type
+      date_range: Date Range
+  admin_management:
+    action:
+      change_password: Change password
+      cancel_change_password: Cancel change password
+      generate_reset_link: Generate Reset Link
+      success_label: Password changed successfully.
+      login_redirection: You are being redirected to
+  scene_management:
+    tabs:
+      information: Information
+      devices: Devices
+    label:
+      area: Area
+      scene: Scene
+      manual: Manual
+      everyday: Everyday
+      scheduled: Scheduled
+    days:
+      sun: Sun
+      mon: Mon
+      tue: Tue
+      wed: Wed
+      thu: Thu
+      fri: Fri
+      sat: Sat
+  account_information:
+    header:
+      account: Account Information
+      account_subtitle: Manage your profile and account settings.
+      profile: Profile information
+      profile_subtitle: Update your name and email address.
+      password: Update password
+      password_subtitle: Ensure your account is using a long, random password to stay secure.
+  staff_dashboard:
+    label:
+      vacant: Vacant
+      occupied: Occupied
+      check_in: Check In
+      check_out: Check Out
+  crew_dashboard:
+    label:
+      all_orders: All Orders
+      pending: Pending
+      on_cook: On Cook
+      completed: Completed
+      cancelled: Cancelled
+      items: Items
+      item: Item
+      processing: Processing
+      order_number: "Order #"
+      reason_on_cancelling: Cancellation reason
+      description: Please tell us why you are cancelling this order. This information helps us improve our service.
+      reason_for_cancellation: Reason for Cancellation
+  order_history:
+    label:
+      order_no: "Order #"
+      status: Status
+      room_name: Room Name
+      user: User
+      total_amount: Total Amount
+      order_details: Order Details
+  user_dashboard:
+    filter:
+      all_area: All Area
+  amenities:
+    label:
+      amenity_detail: Additional Details
+      amenity_photo: Amenities Photos
+    state:
+      empty_attribute: No attributes added yet.
+      empty_detail: No additional details available.
+      empty_photo: No amenity photos available.
+  restaurant:
+    label:
+      order_number: "Order #"
+      order_detail: Order Details
+      customer_name: Customer Name
+      room_name: Room Name
+      details: Details
+      total: Total
+      subtotal: Subtotal
+      total_payment: Total Payment
+      reason_for_cancelling: Cancellation reason
+    state:
+      empty_cart: Your cart is currently empty.
+  general_settings:
+    header:
+      display: Display
+      display_subtitle: Change the language and other display settings for your account.
+      theme: Theme Configuration
+      theme_subtitle: Choose your preferred color theme for the interface.
+    label:
+      theme_description: Your theme preference will be saved and applied across all pages.
+  rate_settings:
+    header:
+      electricity: Electricity Rate Settings
+      electricity_subtitle: Manage your monthly electricity rates for accurate cost tracking.
+      water: Water Rate Settings
+      water_subtitle: Manage your monthly water rates for accurate cost tracking.
+    label:
+      no_rate: No rate history available.
+      rate_history: Rate History
+      view_rate_history: View History
+      rate_history_subtitle: Historical electricity rates.
+      current_rate: Current Rate
+      current_rate_subtitle: Active electricity rate for cost calculations.
+      latest_rates: Latest Rates
+      latest_rates_subtitle: Active water rates for cost calculations.
+      tier_footer: "*Rates are based on m³ consumption"
+      default_rate_description: "Note: Replaces the default rate used when no monthly rate is set."
+    state:
+      no_electricity_rate: No Electricity Rates.
+      no_water_rate: No Water Rates.
+      no_electricity_rate_description: Add your first electricity rate to get started.
+      no_water_rate_description: Add your first water rate to get started.
+  file_settings:
+    header:
+      file: File Manager
+      file_subtitle: Manage and download your files efficiently.
+      auto_deletion: Auto-deletion Policy
+      auto_deletion_description: Archived files are automatically permanently deleted after 30 days.
+    label:
+      days: days
+  climate_analytics:
+    header:
+      setpoint_and_actual: Setpoint and Actual
+      fan_speed: Fan Speed
+      on_off_patterns: ON/OFF Patterns
+      temperature_fluctuations: Temperature Fluctuations
+      setpoint_analysis: Setpoint Analysis
+    label:
+      room: Room
+      room_area: Room area
+      last_uplink: Last Uplink
+      average_actual: Average Actual
+      average_setpoint: Average Setpoint
+      gap_to_setpoint: Gap to Setpoint
+      average_fan_speed: Average Fan Speed
+      time_on_high: Time on High
+      fan_changes: Fan changes
+      last_known_state: Last known state
+      runtime: Runtime
+      on_off_changes: On/off changes
+      lowest_temperature: Lowest Temperature
+      highest_temperature: Highest Temperature
+      time_in_comfort_band: Time in comfort band
+      lowest_setpoint: Lowest Setpoint
+      highest_setpoint: Highest Setpoint
+      setpoint_changes: Changes
+    caption:
+      while_on: While on
+      measured_at_thermostat: Measured at the thermostat
+      changes: "{count} changes"
+      within_band: "Within ±1° for {percent}% of readings"
+      at: "At {time}"
+      of_on_time: "of on-time"
+      within_comfort: "within ±1°"
+      per_day: "{value} per day"
+      last_reading: "Last reading {time}"
+      readings_on: "readings on"
+      in_range: "in range"
+      no_fan_readings: "No fan readings"
+      no_power_readings: "No power readings"
+      no_setpoint_readings: "No on-time setpoint readings"
+      mode: "Mode {mode}"
+    fan:
+      low: Low
+      medium: Medium
+      med: Med
+      high: High
+      auto: Auto
+      of_three: "of 3"
+    badge:
+      low_setpoint: Low setpoint
+      on_target: On target
+      running_warm: Running warm
+      too_warm: Too warm
+      running_cool: Running cool
+      struggling: Struggling
+      offline: Offline
+      frequent_on_off: Frequent on/off
+      above_setpoint: Above setpoint
+      comfortable: Comfortable
+      mixed: Mixed
+      uncomfortable: Uncomfortable
+      low: Low
+      frequent: Frequent
+    state:
+      on: On
+      off: Off

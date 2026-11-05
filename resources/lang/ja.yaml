@@ -1,0 +1,1259 @@
+# Layout and UI Components
+layout:
+  logout: ログアウト
+  login:
+    title: アカウントにログイン
+    remember_me: ログイン状態を保持
+    forgot_password: パスワードをお忘れですか？
+    contact_administrator: パスワードのリセットについては管理者にお問い合わせください。
+    help_manual: ヘルプとマニュアル
+  role:
+    super_admin: スーパー管理者
+    admin: 管理者
+    crew: スタッフ
+    staff: 従業員
+  impersonation:
+    viewing_as: ～として表示中
+    exit_session: セッションを終了
+  footer:
+    company_name: 株式会社Tensei Philippines © 2022
+  pagination:
+    prev: 前へ
+    next: 次へ
+    item: "全{ total }件中 { start } - { end }件を表示"
+  appearance:
+    light: ライト
+    dark: ダーク
+
+# Navigation
+navigation:
+  label:
+    overview: 概要
+    control: 制御
+    hospitality: ホスピタリティ
+    management: 管理
+    devices: デバイス
+    apps: アプリ
+  admin:
+    dashboard: ダッシュボード
+    room_monitoring: 客室監視
+    room_management: 客室管理
+    electric_monitoring: 電力監視
+    climate: 気候
+    switches: スイッチ
+    plugs: プラグ
+    rooms: 客室
+    remote_lock: リモートロック
+    lorawan: LoRaWAN
+    lorawan_gateway: ゲートウェイ
+    lorawan_device: デバイス
+    switch_bot: SwitchBot
+    switch_bot_account: アカウント
+    switch_bot_hub: ハブ
+    switch_bot_device: デバイス
+    switch_bot_remote: リモコン
+    corsight: Corsight
+    corsight_account: アカウント
+    corsight_device: デバイス
+    corsight_person: 人
+    logs: ログ
+    account_management: アカウント
+    admins: 管理者
+    users: ユーザー
+    settings: 設定
+    account_info: アカウント情報
+    view_as_role: 役割として表示
+    profile: プロフィール
+    password: パスワード
+    display: 表示
+    role: 権限
+    scene: シーン
+    general: "一般"
+    system: "システム"
+    rate: "料金"
+    files: "ファイル"
+    water_billing: "水道料金"
+    climate_analytics: 気候分析
+  crew:
+    order_history: 注文履歴
+    food_menu: フードメニュー
+  staff:
+    promos: プロモーション
+    amenities: アメニティ
+  user:
+    dashboard: ダッシュボード
+    amenities: アメニティ
+    promos: プロモーション
+    restaurant: レストラン
+    calendar: カレンダー
+    washing_machine_1: Electrolux Life
+    vacuum_cleaner: LG Thinq
+    cctv: Axis
+    curtain: Smart Life
+    sos: SOS
+  notification: 通知
+
+# Page Headers
+head:
+  dashboard: ダッシュボード
+  dashboard_device: 客室デバイス
+  climate_analytics: 気候分析
+  room_monitoring: 客室監視
+  electric_monitoring: 電力監視
+  switch_monitoring: スイッチ監視
+  climate_monitoring: 気候監視
+  plug_monitoring: プラグ監視
+  room_management: 客室管理
+  remote_lock_management: リモートロック管理
+  lorawan_devices: LoRaWANデバイス
+  lorawan_gateway: LoRaWANゲートウェイ
+  switch_bot_account: SwitchBotアカウント
+  switch_bot_device: SwitchBotデバイス
+  switch_bot_hub: SwitchBotハブ
+  switch_bot_remote: SwitchBotリモコン
+  corsight_account: Corsightアカウント
+  corsight_device: Corsightデバイス
+  corsight_person: 人
+  logs: アクティビティログelectricity_rate
+  admin_management: 管理者
+  user_management: ユーザー
+  general_settings: 設定
+  password_settings: パスワード設定
+  profile_settings: プロフィール設定
+  display_settings: 表示設定
+  scene_management: シーン管理
+  front_desk: フロントデスク
+  room_overview: 客室概要
+  amenity: アメニティ
+  orders: 注文
+  food_menu: フードメニュー
+  promo: プロモーション
+  restaurant: レストラン
+  order_history: 食事注文履歴
+  aircon_temperature: エアコン温度
+  reset_password: パスワードリセット
+  water_billing_report: "水道料金・レポート"
+
+# Actions
+action:
+  sign_in: "サインイン"
+  add: "追加"
+  create: "作成"
+  update: "更新"
+  delete: "削除"
+  save: "変更を保存"
+  apply: "適用"
+  apply_changes: "変更を適用"
+  sync: "同期"
+  import: "インポート"
+  copy: "コピー"
+  checkout: "チェックアウト"
+  place_order: "注文する"
+  clear_items: "すべての項目をクリア"
+  reset: "リセット"
+  cancel: "キャンセル"
+  close: "閉じる"
+  dismiss: "閉じる"
+  send_alert: "アラートを送信"
+  mark_as_resolved: "解決済みにする"
+  back: "戻る"
+  go_back: "戻る"
+  more: "もっと見る"
+  details: "詳細"
+  discover_more: "さらに詳しく"
+  show: "表示"
+  no_thanks: "いいえ、結構です"
+  hide: "非表示"
+  view: "表示"
+  never_show_again: "今後表示しない"
+  show_less: "表示を減らす"
+  show_more: "もっと表示"
+  show_more_or_less: "もっと表示／減らす"
+  loading: "読み込み中…"
+  add_rate: "料金を追加"
+  click_download: "クリックしてダウンロード"
+  restore: "復元"
+  viewing: "表示中"
+  archive: "{ state } アーカイブ済み"
+  download: "{ file_type } をダウンロード"
+  back_to_home_page: "ホームページに戻る"
+  change_password: パスワードの変更
+  login: ログイン
+  cancel_order: 注文をキャンセル
+  confirm_cancellation: 確認
+
+# Operations
+operation:
+  search: 検索
+  action: アクション
+  template: テンプレート取得
+  import: インポート
+  export: エクスポート
+  filter: フィルター
+
+category:
+  all_room: すべての客室
+  all_floor: すべてのフロア
+  all_role: すべての権限
+  all_category: すべてのカテゴリー
+  all_status: "すべてのステータス"
+  all_location: "すべての場所"
+
+filter:
+  select_all: すべて選択
+  select_item: 項目を選択
+  select_origin_type: 発生源タイプを選択
+  select_severity: 重要度を選択
+  select_aircon: エアコンを選択
+  view_all: すべて表示
+  view_user: ユーザーを表示
+  view_device: デバイスを表示
+  select_meter: エネルギーメーターを選択
+  select_date_range: 日付範囲を選択
+  select_month: 月を選択
+  over_all: 全体
+  per_phase: フェーズ別
+  distinct_phase: 個別フェーズ
+  between_phase: フェーズ間
+  select_devices: デバイスを選択
+  select_rooms: 部屋を選択
+  select_areas: エリアを選択
+
+date_range_filter:
+  6_hour: 6時間
+  12_hour: 12時間
+  1_day: 1日
+  3_month: 3ヶ月
+  6_month: 6ヶ月
+  1_year: 1年
+  today: 本日
+  last_2_days: 過去2日間
+  last_7_days: 過去7日間
+  last_30_days: 過去30日間
+  6_hrs: 6時間
+  1_d: 1日
+  1_w: 1週間
+  1_m: 1ヶ月
+  this_month: 今月
+  this_quarter: 今四半期
+  last_quarter: 前四半期
+  this_year: 本年
+  last_year: 昨年
+  current_month: 当月
+  last_month: 前月
+  start_date: 開始日
+  end_date: 終了日
+  custom: カスタム
+
+label:
+  default: "デフォルト"
+  show_more: "もっと表示"
+  show_less: "表示を減らす"
+  new: "新規"
+  outdated: "旧"
+  updated: "更新済み"
+  latest: "最新"
+  default_rate: "デフォルト料金"
+  report: "レポート"
+  months: "か月"
+  active: "有効"
+  inactive: "無効"
+  on: "オン"
+  off: "オフ"
+  monitoring: モニタリング
+  energy: エネルギー
+
+unit:
+  kwh: "kWh"
+  a: "A"
+  v: "V"
+  kw: "kW"
+  kwh_day: "kWh/日"
+  per_kwh: "kWhあたり"
+  kg: "kg"
+  kg_day: "kg/日"
+  metric_ton: "メトリックトン"
+  kg_c02_per_kwh: "kWhあたりCO2 (kg)"
+  target_kwh_month: "目標：{target} kWh/月"
+  tons_co2e: "tCO2e"
+  kg_co2: kg CO₂
+  kg_kwh: kg/kWh
+
+# States and Status
+state:
+  empty: 現在、利用可能なデータがありません。
+  no_uplink: アップリンクデータなし
+  no_data: データなし
+  no_configuration: 利用可能な設定がありません
+  loading:
+    title: デバイスをスキャン中
+    description: 数分かかる場合があります。
+  error: 予期せぬエラーが発生しました。
+
+status:
+  processed: 処理済み
+  successful: 成功
+  unsuccessful: 失敗
+  active: 有効
+  inactive: 無効
+  vacant: 空室
+  occupied: 使用中
+  closed: 閉鎖
+  open: 開放
+  in_stock: 在庫あり
+  resolved: 解決済み
+  try_again: 再試行してください
+  wait: しばらくお待ちください…
+  excellent: 優秀
+  good: 良好
+  fair: 普通
+  poor: 不良
+
+toast:
+  header:
+    report_progress: "レポート作成中"
+  body:
+    report_description: "完了まで少々お待ちください。完了次第お知らせします。"
+
+# デバイス関連
+device:
+  controls:
+    power: 電源
+    mode: モード
+    fan_speed: 風量
+    temp: 温度
+    room_temp: 室温
+    mute: ミュート
+    freeze: 静止
+    zoom: ズーム
+    channel: チャンネル
+    vol: 音量
+    home: ホーム
+    back: 戻る
+  telemetry:
+    entry: 入室
+    exit: 退室
+    peak_visitors: ピーク訪問者数
+    current_visitors: 現在の訪問者数
+    motion_detected: 動作検知
+    no_motion: 動作なし
+    temperature: 温度
+    humidity: 湿度
+    co2: CO2レベル
+    illuminance: 照度
+  aircon:
+    set_point: 設定温度
+  lorawan:
+    phase_a: フェーズA別名
+    phase_b: フェーズB別名
+    phase_c: フェーズC別名
+    switch_1: コントロール1別名
+    switch_2: コントロール2別名
+    switch_3: コントロール3別名
+    operation: ワークプレイスセンサー動作
+    slave_id: スレーブID
+    slave_model: スレーブモデル
+
+# Forms
+form:
+  label:
+    current_password: 現在のパスワード
+    new_password: 新しいパスワード
+    confirm_password: パスワードの確認
+    room_name: 客室名
+    room_number: 客室番号
+    floor_name: フロア名
+    room_area: 客室エリア
+    external_apps: 外部アプリケーション
+    email_address: メールアドレス
+    email: メール
+    password: パスワード
+    access_token: アクセストークン
+    secret_key: シークレットキー
+    webhook: Webhook
+    corsight_username: Fortifyユーザー名
+    corsight_password: Fortifyパスワード
+    endpoint_secret: Endpointシークレット
+    endpoint_url: Endpoint URL
+    camera_id: カメラID
+    event_type: イベントタイプ
+    date_from: 開始日
+    date_to: 終了日
+    date_range: 日付範囲
+    name: 名前
+    username: ユーザー名
+    role: 権限
+    access_pin: アクセスPIN
+    role_name: 権限名
+    guard_name: ガード名
+    permission: 権限
+    device_name: デバイス名
+    hub_name: ハブ名
+    dev_eui: デバイスEUI
+    manufacturer: 製造元
+    model: モデル
+    gateway: ゲートウェイ
+    room_access: 客室アクセス
+    permanent: 永続的
+    start_access: アクセス開始
+    end_access: アクセス終了
+    add_new_access: 新しいアクセスを追加
+    add_room_new_access: "{room}のアクセスを追加"
+    update_room_new_access: "{room}のアクセスを更新"
+    delete_room_access: 客室アクセスを削除
+    connection: LoRaWAN接続
+    empty_selection: 利用可能な項目がありません
+    your_orders: ご注文
+    order_history: 注文履歴
+    no_access: アクセス権限のないユーザー
+    food_name: 料理名
+    description: 説明
+    category: カテゴリー
+    price: 価格
+    ip_address: IPアドレス
+    mac_address: MACアドレス
+    additional_info: 追加情報
+    additional_details: 詳細情報
+    add_new_info: 追加情報を新規登録
+    amenity_title: タイトル
+    amenity_description: 説明
+    amenity_category: カテゴリー
+    amenity_photos: アメニティ写真
+    icon_theme: アイコンテーマ
+    scene_name: シーン名
+    time: 時刻
+    schedule: スケジュール
+    color: 色
+    icon: アイコン
+    scheduled: スケジュール設定済み
+    manual: 手動
+    everyday: 毎日
+    custom: カスタム
+    repeat: 繰り返し
+    smart_devices: スマートデバイス
+    add_devices: デバイスを追加
+    title: タイトル
+    validity_period: 有効期間
+    promo_title: プロモーションタイトル
+    device_information: デバイス情報
+    enable_storage: ストレージを有効にする
+    language: 言語
+    appearance: "外観"
+    availability: 在庫状況
+    month: "月"
+    rate_per_kwh: "kWhあたり単価 (₱)"
+    consumer_type: "需要家区分"
+    meter_size: "メーター口径"
+    effective_date: "適用開始日"
+    notes: "備考"
+    consumption_rates: "使用量別料金（単価）"
+    file_name: "ファイル名"
+    generated_by: "作成者"
+    reset_link: リセット用リンク
+  placeholder:
+    room_name: 客室名を選択
+    room_number: 客室番号を入力
+    floor_name: フロア名を入力
+    select_floor: フロア名を選択
+    room_area: 客室エリアを入力
+    select_room_area: 客室エリアを選択
+    email_address: メールアドレスを入力
+    email: メールを入力
+    password: パスワードを入力
+    access_token: アクセストークンを入力
+    secret_key: シークレットキーを入力
+    webhook: Webhookを入力
+    corsight_username: 例：ibms-integration
+    corsight_password: Fortifyユーザーのパスワードを入力
+    endpoint_secret: 共有Webhookシークレットを入力
+    camera_id: Fortify Webクライアント - カメラからコピー
+    event_type: 全タイプ
+    camera: 全カメラ
+    camera_role: 全ロール
+    name: 名前を入力
+    username: ユーザー名を入力
+    role: 権限を選択
+    access_pin: アクセスPINを入力
+    role_name: 権限名を入力
+    guard_name: ガード名を選択
+    permission: 権限を検索
+    hub_name: ハブ名を入力
+    ip_address: IPアドレスを入力
+    mac_address: MACアドレスを入力
+    enter_device_name: デバイス名を入力
+    device_name: デバイス名を選択
+    enter_device_eui: デバイスEUIを入力
+    manufacturer: 製造元を選択
+    model: モデルを選択
+    gateway: ゲートウェイを選択
+    room: 客室を選択
+    connection: 接続を選択
+    amenity_title: タイトルを入力
+    amenity_description: 説明を入力
+    amenity_category: カテゴリーを選択
+    amenity_attribute_name: 属性名を入力
+    amenity_attribute_description: 属性の説明を入力
+    color_icon: 色とアイコンを選択
+    scene_name: シーン名を入力
+    food_name: 料理名を入力
+    food_description: 料理の説明を入力
+    category: カテゴリーを選択
+    price: 価格を入力
+    title: タイトルを入力
+    description: 説明を入力
+    start_date: 開始日を選択
+    end_date: 終了日を選択
+    date: 日付を選択
+    rate_per_kwh: "kWhあたり単価"
+    consumer_type: "需要家区分を選択してください"
+    meter_size: "例:1/2"
+    meter_size_select: メーターサイズを選択
+    month: "月を選択してください"
+    notes: "備考:例) 住宅用標準料金 (第1区分)"
+    reset_link: リセット用リンク
+    new_password: 新しいパスワード
+    confirm_password: 新しいパスワード（確認）
+  validation:
+    role_name: 権限名が一致しないか、権限名がありません。
+    password: パスワードの確認
+
+# Errors
+error:
+  server_error: エラーが発生しました。
+  admin_update_status_failed: 管理者ステータスの更新に失敗しました。
+  connection_waiting: 接続を待機しています。
+  unable_to_import: ファイルのインポートに失敗しました。もう一度お試しください。
+  temperature_data: 温度データの読み込みに失敗いたしました。
+
+tooltip:
+  offline_note: "注意：高い消費量は蓄積された使用量を反映している場合があります"
+  offline_duration: "デバイスオフライン期間："
+  unattributed_cost: "未帰属コストが含まれています"
+  unattributed_cost_message: "メーターのギャップ期間における₱ {cost} の未帰属コストが合計に含まれています"
+
+# Modals
+modal:
+  action:
+    delete_floor: "フロアを削除"
+    add_room: "部屋を追加"
+    update_room: "部屋を編集"
+    delete_room: "部屋を削除"
+    import_room: "部屋をインポート"
+    add_gateway: "ゲートウェイを追加"
+    add_lorawan_devices: "LoRaWANデバイスを追加"
+    add_lorawan_gateway: "LoRaWANゲートウェイを追加"
+    update_lorawan_gateway: "LoRaWANゲートウェイを更新"
+    delete_lorawan_gateway: "LoRaWANゲートウェイを削除"
+    import_lorawan_gateway: "LoRaWANゲートウェイをインポート"
+    update_lorawan_device: "LoRaWANデバイスを更新"
+    delete_lorawan_device: "LoRaWANデバイスを削除"
+    import_lorawan_device: "LoRaWANデバイスをインポート"
+    update_gateway: "ゲートウェイを編集"
+    delete_gateway: "ゲートウェイを削除"
+    add_account: "アカウントを追加"
+    update_account: "アカウントを編集"
+    delete_account: "アカウントを削除"
+    add_switch_bot_account: "SwitchBotアカウントを追加"
+    update_switch_bot_account: "SwitchBotアカウントを更新"
+    delete_switch_bot_account: "SwitchBotアカウントを削除"
+    import_switch_bot_account: "SwitchBotアカウントをインポート"
+    add_corsight_account: "Corsightアカウントを追加"
+    update_corsight_account: "Corsightアカウントを更新"
+    delete_corsight_account: "Corsightアカウントを削除"
+    add_corsight_device: "Corsightデバイスを追加"
+    update_corsight_device: "Corsightデバイスを更新"
+    delete_corsight_device: "Corsightデバイスを削除"
+    device_configuration: "デバイス設定"
+    add_device: "Corsightデバイスを追加"
+    view_event: "イベントを表示"
+    add_switch_bot_hub: "SwitchBotハブを追加"
+    update_switch_bot_hub: "SwitchBotハブを更新"
+    delete_switch_bot_hub: "SwitchBotハブを削除"
+    update_switch_bot_device: "SwitchBotデバイスを更新"
+    update_switch_bot_remote: "SwitchBotリモコンを更新"
+    add_admin: "管理者を追加"
+    add_admin_account: "管理者アカウントを追加"
+    update_admin: "管理者を編集"
+    update_admin_account: "管理者アカウントを更新"
+    delete_admin: "管理者を削除"
+    delete_admin_account: "管理者アカウントを削除"
+    add_user: "ユーザーを追加"
+    update_user: "ユーザーを編集"
+    delete_user: "ユーザーを削除"
+    add_role: "ロールを追加"
+    update_role: "ロールを編集"
+    delete_role: "ロールを削除"
+    add_scene: "シーンを追加"
+    update_scene: "シーンを更新"
+    delete_scene: "シーンを削除"
+    add_amenity: "アメニティを追加"
+    update_amenity: "アメニティを更新"
+    delete_amenity: "アメニティを削除"
+    add_new_food: "新しいフードを追加"
+    add_menu: "メニューを追加"
+    edit_menu: "メニューを編集"
+    delete_menu: "メニューを削除"
+    add_promo: "プロモを追加"
+    update_promo: "プロモを編集"
+    delete_promo: "プロモを削除"
+    add_devices: "デバイスを追加"
+    edit_device: "デバイスを編集"
+    delete_device: "デバイスを削除"
+    scene_device_selection: "シーン用デバイス選択"
+    scene_device_control: "シーン用デバイス操作"
+    emergency_alert: "緊急アラート"
+    configurations: "設定"
+    send_alert: "アラートを送信"
+    view: "表示"
+    dismiss: "閉じる"
+    add_rate: "新しい料金を追加"
+    download_file: "ファイルをダウンロード"
+    delete_file: "ファイルを削除"
+    restore_file: "ファイルを復元"
+    delete_permanently: "完全に削除"
+    permanently_delete_file: "ファイルを完全に削除"
+    delete_rate: "料金を削除"
+    update_rate: "料金を更新"
+  title:
+    switch_bot_device_scan: SwitchBotデバイススキャン概要
+    switch_bot_hub_scan: SwitchBotハブスキャン概要
+    switch_bot_device_scan_result: デバイススキャン結果
+    switch_bot_hub_scan_result: ハブスキャン結果
+    switch_bot_remote_scan: SwitchBotリモコンスキャン概要
+    switch_bot_remote_scan_result: リモコンスキャン結果
+    scene_detail: シーン詳細
+    scene_schedule: スケジュール設定
+    import_summary: インポート概要
+    success_rate: 成功率
+    failed_imports: インポート失敗
+  description:
+    switch_bot_device_scan_result: スキャンされたデバイスレコードの概要です。以下の詳細をご確認の上、必要な対応をお願いいたします。
+    switch_bot_hub_scan_result: スキャンされたハブレコードの概要です。以下の詳細をご確認の上、必要な対応をお願いいたします。
+    switch_bot_remote_scan_result: スキャンされたリモコンレコードの概要です。以下の詳細をご確認の上、必要な対応をお願いいたします。
+    scene_description: シーンをスケジュール設定して、スマートデバイスの動作を自動化します。
+    amenity_description: 追加の属性（例：電話番号、スケジュール、場所）を追加できます。
+    issuance_message: スイッチボットロックの暗証番号の発行には最大で5分ほどかかる場合があります。発行された暗証番号が有効になったことを示す通知が届くまでお待ちください。
+    rate_description: "特定の月に適用される電気料金を設定します。"
+  hint:
+    amenity_photos: 最大5枚の写真を含めることができます。
+    webhook_found: Webhookが見つかりました。
+    failed_accounts_note: 以下のアカウントはスキャンできませんでした。各アカウントについて表示されている問題を解決するか、それらをスキップして続行してください。
+  confirm:
+    warning: "警告：この操作は永続的であり、元に戻すことはできません。"
+    role_name_input: "確認のため、権限名を入力してください"
+    delete_switch_bot_account: このSwitchBotアカウントを削除してもよろしいですか？
+    delete_corsight_account: このCorsightアカウントを削除してもよろしいですか？
+    delete_corsight_device: このCorsightデバイスを削除してもよろしいですか？
+    delete_room: この部屋を削除してもよろしいですか？
+    delete_floor: このフロアを削除してもよろしいですか？
+    delete_user: このユーザーを削除してもよろしいですか？
+    delete_role: この役割を削除してもよろしいですか？
+    delete_device: このLoRaWANデバイスを削除してもよろしいですか？
+    delete_device_body: "警告：この操作は永続的であり、元に戻すことはできません。"
+    delete_lorawan_gateway: このLoRaWANゲートウェイを削除してもよろしいですか？
+    delete_room_access: このユーザーの部屋アクセスを削除してもよろしいですか？
+    delete_admin: この管理者を削除してもよろしいですか？
+    delete_amenity: このアメニティを削除してもよろしいですか？
+    delete_scene: このシーンを削除してもよろしいですか？
+    delete_menu: このメニューを削除してもよろしいですか？
+    delete_promo: このプロモーションを削除してもよろしいですか？
+    emergency_body: 緊急警告を発信しようとしています。続行してもよろしいですか？
+    emergency_admin_body: "客室{{room}}で緊急事態が発生しました。至急対応が必要です。"
+    delete_water_rate: "この水道料金を削除してもよろしいですか？"
+    delete_file: "このファイルを削除してもよろしいですか？"
+    delete_file_permanently: "このファイルを完全に削除してもよろしいですか？"
+    restore_file: "このファイルを有効なファイルに復元してもよろしいですか？"
+    delete_info: "注：完全に削除されることはなく、アーカイブフォルダに保管されます。"
+    delete_input: "確認のため、DELETE と入力してください。"
+  alert:
+    floor_error: フロアを削除できません。
+    room_error: 客室を削除できません。
+    lorawan_gateway_error: ゲートウェイを削除できません。
+    device_registered: この客室にLoRaWANデバイスが登録されています。
+    room_assigned: このフロアにはまだ客室が割り当てられています。
+    room_monitoring_no_devices: この客室にデバイスが見つかりません。デバイスを追加してください。
+    no_room_selected: 客室が選択されていません。
+    no_devices_in_room: この客室にデバイスが見つかりません。
+    no_successful_import: インポート成功がありません。
+    data_store_info: データはローカルに保存され、履歴分析とレポート作成に使用されます。
+    rate_alert: "正確なコスト計算のため、料金は定期的に更新してください。"
+
+# Tables
+table:
+  header:
+    num: No.
+    username: ユーザー名
+    name: 名前
+    access_status: アクセス状態
+    room_name: 客室名
+    room_number: 客室番号
+    floor_name: フロア名
+    room_area: 客室エリア
+    email: メール
+    dev_eui: デバイス EUI
+    gateway: ゲートウェイ
+    ip_address: IPアドレス
+    mac_address: MACアドレス
+    connection: 接続
+    auth_cred: 認証情報
+    corsight_username: Fortifyユーザー名
+    endpoint_url: Endpoint URL
+    camera_id: カメラID
+    enable_storage: データ保存
+    last_synced_at: 最終同期日時
+    received_at: 受信日時
+    event_type: イベントタイプ
+    event_id: イベントID
+    face_crop: 顔画像
+    camera: カメラ
+    photo: 写真
+    appearance_id: 出現ID
+    last_seen_at: 最終検知
+    enter_at: 入場
+    exit_at: 退場
+    dwell: 滞在時間
+    gender: 性別
+    age_group: 年齢層
+    security: セキュリティ
+    code: コード
+    severity: 重要度
+    timestamp: タイムスタンプ
+    originated_by: 発生元
+    originated_type: 発生源タイプ
+    description: 説明
+    role_name: 権限名
+    guard_name: ガード名
+    permissions: 権限
+    last_updated: 最終更新日時
+    role: 権限
+    activation: 有効化
+    device_name: デバイス名
+    device_type: デバイスタイプ
+    serial_num: シリアル番号
+    battery_level: バッテリー残量
+    hub_name: ハブ名
+    name_on_app: アプリ上の名前
+    amenity_description: 説明
+    category: カテゴリー
+    visibility: 表示
+    model: モデル
+    controls: コントロール
+    active_device: 有効デバイス
+    people_count: 人数
+    title: タイトル
+    validity_period: 有効期間
+    user: ユーザー
+    status: ステータス
+    switch_bot_lock_status: スイッチボットロックの状態
+    date: 日付
+    temperature: 温度
+    scene_name: シーン名
+    device_involved: 関連デバイス
+    trigger: トリガー
+    type: タイプ
+    item: 商品
+    price: 価格
+    availability: 在庫状況
+    document: 書類
+    size: サイズ
+    generated_by: 作成者
+    days_left: 残日数
+    consumer_type: 契約者種別
+    meter_size: メーター口径
+    effective_date: 適用開始日
+    tiers: 料金区分
+    charges: 料金
+    min: 最小値
+    max: 最大値
+    meter: メーター
+    usage: 使用量
+    rate_per_m3: 1立方メートル当たり単価
+    amount: 金額
+    month: 月
+    avg_meter: 平均使用量／メーター
+    failed_accounts: 無効なアカウント
+    consumption: 消費量
+    co2_emissions: CO2排出量
+    excess_emissions: 超過排出量
+    potential_savings: 削減可能量
+    daily_average: 日平均
+    metric: 指標
+    current: 現在
+    previous: 前回
+    change: 変化
+    total_cost: 総費用
+    cost_kwh: kWh単価
+  body:
+    not_configured: まだ設定されていません
+    set_point: 設定値
+    cubic_meter: 立方メートル
+    total_consumption: 総消費量
+    average_daily_usage: 1日平均使用量
+
+# ページ
+page:
+  corsight_account:
+    env_snippet:
+      title: リスナー環境スニペット
+      subtitle: これらの行をアプライアンスのリスナー環境ファイルに追加してください
+      username: リスナー用のFortifyユーザー
+      endpoint_url: イベントを受信するiBMSエンドポイント
+      endpoint_secret: Webhookに署名するために使用される共有シークレット
+  corsight_device:
+    hint:
+      name_match: Fortifyのカメララベルと一致する名前を入力してください。受信イベントをこのデバイスにリンクするために使用されます。
+      data_storage: オフの場合、このカメラからのイベントは受信されますが保存されません。
+    status:
+      inactive: 非アクティブ
+  corsight_person:
+    counter:
+      in_now: 入室中
+      security: セキュリティ
+      entries: 入場数
+      exits: 退場数
+    filter:
+      security_only: セキュリティのみ
+      in_now: 入室中
+      all_camera: すべてのカメラ
+      all_role: すべての役割
+    role:
+      general: 一般
+      entry_point: 入口
+      exit_point: 出口
+      passage: 通路
+    status:
+      in: 入室中
+      exited: 退場済み
+      abandoned: 不明
+    trigger:
+      start: 出現開始
+      forced_update: 強制更新
+      end: 出現終了
+      periodic: 定期更新
+    label:
+      watchlist_hit: 監視リスト
+      face_score: 顔スコア
+      liveness: 生体判定
+      mask: マスク
+      matched_person: 一致した人物
+      match_confidence: 一致信頼度
+      watchlists: 監視リスト
+      repeated_alert: 繰り返し
+      copy: コピー
+      copied: コピーしました
+    match_outcome:
+      matched: 一致
+      not_determined: 未判定
+      unknown: 不明
+    detail:
+      title: 訪問詳細
+      visit_details: 訪問詳細
+      security_alert: セキュリティ警報
+      trail_title: イベント履歴
+      event_count: "{count} 件の出現イベント"
+      trail_subtitle: この訪問について記録された出現イベント
+      trail_empty: この訪問の出現イベントは記録されていません。
+  notification:
+    mark_as_read: 既読にする
+    no_notifications: 通知はまだありません。
+    we_will_notify_you: 新しい通知があればお知らせいたします。
+  admin_dashboard:
+    header:
+      device_status: デバイスステータス
+      device_status_subtitle: 注意が必要なデバイス
+      device_summary: デバイス概要
+      device_summary_subtitle: カテゴリー別の現在有効なデバイス
+      electricity_consumption: 電力消費概要
+      electricity_consumption_subtitle: メーター読み取り値に基づく総コスト
+      room_monitoring: 客室監視概要
+      activity: 最近のアクティビティ
+      monthly_cost: 月間エネルギーコスト概要
+      monthly_cost_subtitle: 日次エネルギーコスト
+      monthly_consumption: 月間消費量
+      hourly_consumption: 時間別消費量
+      environment_record: 環境センサー記録
+      environment_record_subtitle: 現在の客室状態
+      visitor_trend: 週間推移
+      active_machine: 電気メーターアクティブ機器
+      carbon_tracker: カーボントラッカー
+      all_electric_meter: 全電気メーター
+      all_electric_meter_subtitle: 全拠点のリアルタイムエネルギー使用量を追跡します。
+      power_factor: 力率
+      power_factor_subtitle: メーター別内訳
+      fleet_average: 全体平均
+      fleet_average_subtitle: 全メーター合計
+    label:
+      device: 総デバイス数
+      account: 総アカウント数
+      gateway: 総ゲートウェイ数
+      room: 総客室数
+      total_visitor: 総訪問者数
+      daily_visitor: 日次訪問者数
+      visitor: 訪問者の推移
+      active: 有効
+      sync: 同期済み
+      vacant: 空室
+      occupied: 使用中
+      last_seen: 最終確認時刻
+      last_uplink: 最終データアップリンク
+      last_updated: 最終更新日時
+      than_last_month: 先月比
+      phase: フェーズ
+      hour: 時間
+      month: 月
+      day: ひ
+      meter: メーター
+      selected_meter: 選択されたメーター
+      price_vary: "*推定コストです。実際の請求額は異なる場合があります。"
+      active_meter: アクティブメーター
+      grid_factor: グリッドファクター
+      monthly_target: 月間目標
+      meter_breakdown: メーター別内訳
+      remaining: 残り
+      vs_last_mo: 先月比
+      current: 電流
+      voltage: 電圧
+      consumption: 消費量
+    energy:
+      no_rate_title: 電力料金が設定されていません
+      no_rate_message: kWhデータは利用可能ですが、料金がないためコストを計算できません。
+      set_rate_button: 設定 → 電力料金
+  water_monitoring:
+    header:
+      water_consumption: 水使用量
+      water_consumption_subtitle: 過去1週間の日別使用量
+      top_consumers: 使用量上位
+      top_consumers_subtitle: 本日の使用量上位
+      all_water_meters: 全水道メーター
+      all_water_meters_subtitle: 機器の状態、使用指標、および推定費用の概要
+    label:
+      today_usage: 本日の総使用量
+      today_usage_subtitle: 全メーター合計
+      weekly_avg: 週間平均
+      weekly_avg_subtitle: "1日当たり:748立方メートル"
+      monthly_total: 当月請求額
+      monthly_total_subtitle: "推定合計額"
+      active_meter: 稼働中メーター
+      active_meter_subtitle: "すべて正常稼働中"
+      usage: 使用量
+      today: 本日
+      flow_rate: 流量
+      estimated_bill: "推定請求額"
+  water_billing_report:
+    header:
+      billing_summary: 月次請求概要
+      billing_summary_subtitle: 水道料金の管理
+      rate_structure: 水道料金体系
+      rate_structure_subtitle: 料金区分の確認および管理
+      billing_history: 請求履歴
+      billing_history_subtitle: 過去の請求書および支払履歴の確認
+    label:
+      total_cost: 総費用
+      average_usage: 平均使用量
+      overview: 概要
+      monthly_data: 月次データ
+      avg_monthly_cost: 月平均費用
+      avg_consumption: 平均使用量
+      6_month_summary: "{count}か月間の概要"
+      total_usage: 総使用量
+      vs_last_period: "前期間比{percentage}%"
+      total_usage_description: 今月の水道使用量合計
+      total_cost_description: 今月の推定請求金額合計
+      average_usage_description: メーターあたりの平均使用量
+  electric_monitoring:
+    header:
+      voltage: 電圧
+      current: 電流
+      insight: インサイト
+    label:
+      last_uplink: 最終データアップリンク
+      total_consumption: 総消費量
+      consumption: 消費量,
+      total_current: 総電流
+      avg_phase_voltage: 平均相電圧
+      avg_neutral_voltage: 平均中性電圧
+      total_power: 総電力
+      total_power_factor: 総力率
+      generate_report: レポートを作成する
+    filter:
+      add_filter: フィルターを追加
+    download:
+      png: PNGでダウンロード
+      svg: SVGでダウンロード
+      csv: CSVでダウンロード
+    status:
+      excellent: 優良
+      acceptable: 許容範囲
+      warning: 警告
+      critical: 重大
+    description:
+      current_excellent: システムは良好にバランスされています。最適な効率状態です。
+      current_acceptable: 許容範囲内です。負荷の再配分を検討してください。
+      current_critical: 深刻な不均衡が発生しています。直ちに負荷を再配分してください。
+      voltage_excellent: モータのディレーティングは不要です。最適な性能を維持しています。
+      voltage_acceptable: 許容範囲内です。定期的な監視を行ってください。
+      voltage_warning: モータのディレーティングが必要です。是正措置を実施してください。
+      voltage_critical: 直ちに対応が必要です。機器に損傷の恐れがあります。
+    insights:
+      current:
+        title: 電流バランス
+        good: 相電流は{value}%でバランスが取れています。均等な負荷分散により、メーターの最適な精度が確保されています。
+        warning: 相不平衡が{value}%です。計量精度およびエネルギー消費データの正確性に影響を与える可能性があります。
+        critical: 深刻な不平衡が{value}%です。重大な計測誤差が発生しています。負荷接続および相の割り当てを直ちに確認してください。
+      power_factor:
+        title: 力率
+        good: 力率は{value}です。無効電力管理が優れており、デマンド料金が最小限に抑えられています。
+        warning: 力率は{value}です。最適でない水準により、追加のデマンド料金が発生し、容量が低下する可能性があります。
+        critical: 力率は{value}です。パフォーマンスが低く、重大なデマンドペナルティおよび上限違反のリスクがあります。
+      voltage:
+        title: 電圧バランス
+        good: 電圧偏差は{value}%です。全相が安定しており、通常条件下でメーターが正確に計測しています。
+        warning: 電圧偏差は{value}%です。不平衡は電源の問題または変圧器比率の誤りを示している可能性があります。
+        critical: 電圧偏差は{value}%です。深刻な不平衡によりメーターの誤作動および不正確なエネルギー記録のリスクがあります。
+      frequency:
+        title: 周波数安定性
+        good: 周波数は{value} Hzで安定しています。系統同期が取れており、メーターは校正範囲内で動作しています。
+        warning: 周波数は{value} Hzです。わずかな不安定性がデマンドインターバルの計算に影響を与える可能性があります。
+        critical: 周波数は{value} Hzです。メーターの仕様範囲外です。計測誤差およびデータロギング障害のリスクがあります。
+  electric_monitoring_report:
+    header:
+      company_name: 会社名
+      reporting_period: 報告期間
+      generated_date: 作成日
+      carbon_footprint_breakdown: カーボンフットプリント詳細内訳
+      emission_summary: 排出量サマリー
+      weekly_emission_trend: 週間排出量の推移
+      current_consumption_metric: 現在の消費指標
+      monthly_breakdown: 月別内訳
+      hourly_energy_trend: 時間別エネルギー使用量の推移
+      monthly_consumption: 月別消費量比較
+      energy_overview: エネルギーの概要
+      energy_breakdown: エネルギー消費の内訳
+      energy_patterns: エネルギー消費の傾向
+      carbon_footprint: カーボンフットプリントの分析
+      energy_cost: エネルギーコストの分析
+      weekly_cost_trend: 週間コスト推移
+      disclaimers: 免責事項
+    description:
+      energy_breakdown: この内訳は、異なるメーターおよび運用エリアにおけるエネルギー使用の分布を示します。
+      energy_patterns: これは、現在のエネルギー使用を過去の期間と比較し、異なる時間帯における消費傾向を分析します。
+      carbon_footprint: このセクションでは、エネルギー使用に基づいた総CO2排出量を取り上げ、前月との比較での削減を強調します。
+      energy_cost: 月別のエネルギーコストの概要、総コスト、消費量、kWhあたりのコストの内訳が含まれます。
+    label:
+      total_co2_emissions: 総CO2排出量
+      carbon_intensity: カーボンインテンシティ
+      grid_emission_factor: （グリッド排出係数）
+      previous_period: 前期間
+      reduction: 削減率 (%)
+      last_days_from_end: （終了日から直近{ days }日間）
+      current_effective_rate: "現在の実効料金：₱{ value }/kWh"
+      total_consumption: 総消費量
+      total_cost: 総費用
+      carbon_footprint: カーボンフットプリント
+      selected_meter: 選択メーター
+      days: 日
+    status:
+      processing: レポートを生成しています。
+      completed: レポートが正常に生成されました。
+      error: レポート生成中にエラーが発生しました。
+    note:
+      footer_data_collected: 本レポートは、施設に設置されたエネルギーモニタリング機器から収集されたデータに基づき生成されています。
+      footer_carbon_emission: CO₂排出量は、フィリピンのグリッド平均排出係数 {{carbon}} kg CO₂/kWh を使用して算出しています。
+      footer_cost_estimates: 費用の見積りは現行の公共料金に基づくものであり、実際の請求により変動する可能性があります。
+      footer_power_quality: 電力品質データは、報告期間中の実際の状態のみを反映しています。
+  activity_log:
+    label:
+      filter: フィルターを追加
+      severity: 重要度
+      origin_type: 発生源タイプ
+      date_range: 日付範囲
+  admin_management:
+    action:
+      change_password: パスワードを変更
+      cancel_change_password: パスワード変更をキャンセル
+      generate_reset_link: リセットリンクを発行する
+      success_label: パスワードを変更しました
+      login_redirection: 〜へリダイレクトしています
+  scene_management:
+    tabs:
+      information: 情報
+      devices: デバイス
+    label:
+      area: エリア
+      scene: シーン
+      manual: 手動
+      everyday: 毎日
+      scheduled: スケジュール設定済み
+    days:
+      sun: 日
+      mon: 月
+      tue: 火
+      wed: 水
+      thu: 木
+      fri: 金
+      sat: 土
+  account_information:
+    header:
+      account: アカウント情報
+      account_subtitle: プロフィールとアカウント設定を管理します。
+      profile: プロフィール情報
+      profile_subtitle: お名前とメールアドレスを更新します。
+      password: パスワードの更新
+      password_subtitle: アカウントのセキュリティを保つため、長くランダムなパスワードを使用してください。
+  staff_dashboard:
+    label:
+      vacant: 空室
+      occupied: 使用中
+      check_in: チェックイン
+      check_out: チェックアウト
+  crew_dashboard:
+    label:
+      all_orders: 全注文
+      pending: "承認待ち"
+      on_cook: 調理中
+      completed: 完了
+      cancelled: キャンセルされました
+      items: アイテム
+      item: アイテム
+      processing: 処理
+      order_number: 注文番号
+      reason_on_cancelling: キャンセル理由
+      description: この注文をキャンセルする理由をお聞かせください。いただいた情報は、サービス向上のために役立てさせていただきます。
+      reason_for_cancellation: キャンセル理由
+  order_history:
+    label:
+      order_no: "注文番号"
+      status: ステータス
+      room_name: 客室名
+      user: ユーザー
+      total_amount: 合計金額
+      order_details: 注文詳細
+  user_dashboard:
+    filter:
+      all_area: すべてのエリア
+  amenities:
+    label:
+      amenity_detail: 詳細情報
+      amenity_photo: アメニティ写真
+    state:
+      empty_attribute: 属性がまだ追加されていません。
+      empty_detail: 利用可能な詳細情報がありません。
+      empty_photo: 利用可能なアメニティ写真がありません。
+  restaurant:
+    label:
+      order_number: "注文番号"
+      order_detail: 注文詳細
+      customer_name: 顧客名
+      room_name: 部屋名
+      details: 詳細
+      total: 合計
+      subtotal: 小計
+      total_payment: お支払い合計
+      reason_for_cancelling: キャンセル理由
+    state:
+      empty_cart: 現在、カートには商品がありません。
+  general_settings:
+    header:
+      display: 表示設定
+      display_subtitle: アカウントの言語およびその他の表示設定を変更します。
+      theme: テーマ設定
+      theme_subtitle: インターフェースの配色テーマを選択します。
+    label:
+      theme_description: 選択したテーマは保存され、すべてのページに適用されます。
+  rate_settings:
+    header:
+      electricity: 電気料金設定
+      electricity_subtitle: 正確な費用管理のため、月次電気料金を管理します。
+      water: 水道料金設定
+      water_subtitle: 正確な費用管理のため、月次水道料金を管理します。
+    label:
+      no_rate: 料金履歴はありません。
+      rate_history: 料金履歴
+      view_rate_history: 履歴を表示
+      rate_history_subtitle: 過去の電気料金履歴。
+      current_rate: 現行料金
+      current_rate_subtitle: 費用計算に使用される有効な電気料金。
+      latest_rates: 最新料金
+      latest_rates_subtitle: 費用計算に使用される有効な水道料金。
+      tier_footer: "*料金は立方メートル (m³) の使用量に基づきます"
+      default_rate_description: "注：月次料金が設定されていない場合に使用される既定料金を置き換えます。"
+    state:
+      no_electricity_rate: 電気料金が設定されていません。
+      no_water_rate: 水道料金が設定されていません。
+      no_electricity_rate_description: 最初の電気料金を追加してください。
+      no_water_rate_description: 最初の水道料金を追加してください。
+  file_settings:
+    header:
+      file: ファイル管理
+      file_subtitle: ファイルの管理およびダウンロードを効率的に行います。
+      auto_deletion: 自動削除ポリシー
+      auto_deletion_description: アーカイブされたファイルは30日後に自動的に完全削除されます。
+    label:
+      days: 日
+  climate_analytics:
+    header:
+      setpoint_and_actual: セットポイントと実測分析
+      fan_speed: ファン速度
+      on_off_patterns: ON/OFFパターン
+      temperature_fluctuations: 温度変動
+      setpoint_analysis: セットポイント分析
+    label:
+      room: 部屋
+      room_area: エリア
+      last_uplink: 最終通信
+      average_actual: 平均実測値
+      average_setpoint: 平均セットポイント
+      gap_to_setpoint: セットポイントとの差
+      average_fan_speed: 平均ファン速度
+      time_on_high: 高風量時間
+      fan_changes: ファン変更回数
+      last_known_state: 最終状態
+      runtime: 稼働時間
+      on_off_changes: ON/OFF変更回数
+      lowest_temperature: 最低温度
+      highest_temperature: 最高温度
+      time_in_comfort_band: 快適帯時間
+      lowest_setpoint: 最低セットポイント
+      highest_setpoint: 最高セットポイント
+      setpoint_changes: 変更回数
+    caption:
+      while_on: 稼働中
+      measured_at_thermostat: サーモスタットで測定
+      changes: "{count}回変更"
+      within_band: "測定値の{percent}%が±1°以内"
+      at: "{time}時点"
+      of_on_time: "稼働時間中"
+      within_comfort: "±1°以内"
+      per_day: "1日あたり{value}"
+      last_reading: "最終測定 {time}"
+      readings_on: "測定値のうち"
+      in_range: "範囲内"
+      no_fan_readings: "ファン測定値なし"
+      no_power_readings: "電力測定値なし"
+      no_setpoint_readings: "稼働中のセットポイント測定値なし"
+      mode: "モード {mode}"
+    fan:
+      low: 弱
+      medium: 中
+      med: 中
+      high: 強
+      auto: 自動
+      of_three: "3段階中"
+    badge:
+      low_setpoint: 低い設定温度
+      on_target: 適正
+      running_warm: 暖めすぎ
+      too_warm: 暑すぎ
+      running_cool: 冷やしすぎ
+      struggling: 苦戦
+      offline: オフライン
+      frequent_on_off: ON/OFF頻繁
+      above_setpoint: 設定温度超過
+      comfortable: 快適
+      mixed: やや不快
+      uncomfortable: 不快
+      low: 低い
+      frequent: 頻繁
+    state:
+      on: オン
+      off: オフ

@@ -1,0 +1,50 @@
+
+# This file is only used for internal reference to display supported areas
+# from the map
+rooms:
+
+  # President's Room
+  - Shachou Room
+  - Shachou CR
+
+  # Show Room
+  - Show Room
+  - Briefcase
+
+  # SE
+  - SI
+  - SE Lounge
+  - Dev
+  - Conference Room
+  - SE CR
+  - Meeting Room Hallway
+  - Meeting Room
+  - Disposal Room
+  - Ops
+  - Sales
+  - Storage Room
+  - Server Room
+  - Cleaning Area
+
+  # GA
+  - GA Room
+  - GA CR
+
+  # Common
+  - Pantry
+  - Hallway
+  - VIP Lounge
+  - Reception
+  - Locker
+  - Lobby
+  - Clinic
+  - Electrical
+  - CR Hallway
+  - Client CR
+  - Male CR
+  - Female CR
+   
+  
+
+
+

@@ -26,7 +26,5 @@ yarn-error.log
 /resources/js/actions
 /resources/js/routes
 /resources/js/wayfinder
-*.yaml
-*.yml
 /storage/framework/tmp
 
