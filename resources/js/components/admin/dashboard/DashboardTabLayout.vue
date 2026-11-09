@@ -8,6 +8,7 @@ const attrs = useAttrs();
 const tabs: { value: string; icon: string }[] = [
     { value: 'monitoring', icon: 'lucide:activity' },
     { value: 'energy', icon: 'lucide:gauge' },
+    { value: 'cctv', icon: 'lucide:scan-face' },
 ];
 </script>
 

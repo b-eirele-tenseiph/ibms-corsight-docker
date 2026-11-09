@@ -114,3 +114,8 @@ Broadcast::channel('order-status-updated', function ($user) {
 Broadcast::channel('admin.booth_visitor', function ($user) {
     return true;
 }, ['guards' => ['admin']]);
+
+// Private channel for admin for Corsight CCTV real-time data
+Broadcast::channel('admin.corsight', function ($user) {
+    return true;
+}, ['guards' => ['admin']]);

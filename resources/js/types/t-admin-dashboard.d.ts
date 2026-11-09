@@ -170,3 +170,9 @@ export interface AdminEnergyPositionLayout {
     hourlyConsumptionPosition: GridPosition;
     monthlyConsumptionPosition: GridPosition;
 }
+
+export interface AdminCctvPositionLayout {
+    dwellTimePosition: GridPosition;
+    demographicsPosition: GridPosition;
+    recentLogPosition: GridPosition;
+}

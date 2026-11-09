@@ -262,6 +262,7 @@ label:
   off: Off
   monitoring: Monitoring
   energy: Energy
+  cctv: CCTV
 
 unit:
   kwh: kWh
@@ -919,6 +920,60 @@ page:
       no_rate_title: No electricity rate set
       no_rate_message: kWh data is available but cost cannot be calculated. Set a rate to enable cost tracking.
       set_rate_button: Rate Settings
+    cctv:
+      header:
+        dwell_time: Dwell Time
+        dwell_time_subtitle: Latest room occupancy activity
+        recent_log: Recent AI Events
+        recent_log_subtitle: Latest demographic detections from connected cameras
+        demographics: Demographics
+        demographics_subtitle: Age and gender distribution from detected visitors
+      label:
+        entered: People Entered
+        exited: People Exited
+        occupancy: Current Occupancy
+        active_cameras: Active Cameras
+        total_cameras: "of {total} total"
+        male: Male
+        female: Female
+        unknown: Unknown
+        entered_badge: Entered
+        exited_badge: Exited
+        person: Tracked person
+        no_logs: No detection logs yet.
+        no_dwell_data: No dwell time data yet.
+        occupancy_caption: Now inside
+        entries_caption: Entries in period
+        exits_caption: Exits in period
+        all_cameras_online: All cameras online
+        cameras_offline: "{count} offline"
+        total_detections: "{count} detections"
+        visitors: Visitors
+        age_distribution: Age Distribution
+        average_dwell: Average Dwell Time
+        seconds: seconds
+        room_monitored: "{room} monitored"
+        rooms_monitored: "{count} rooms monitored"
+        location: Location
+        start: Start
+        end: End
+        duration: Duration
+        view_raw_json: View raw JSON
+        raw_json_title: Raw JSON
+        raw_json_description: Current payload shape used by the frontend. Useful while integrating the Corsight backend.
+        live: Live
+        last_updated: "Last updated: {time}"
+        all_locations: All Locations
+        time: Time
+        camera_location: Camera / Location
+        photo: Photo
+        gender: Gender
+        age_group: Age Group
+        status: Status
+      filter:
+        today: Today
+        last_7_days: Last 7 Days
+        last_30_days: Last 30 Days
   water_monitoring:
     header:
       water_consumption: Water Consumption

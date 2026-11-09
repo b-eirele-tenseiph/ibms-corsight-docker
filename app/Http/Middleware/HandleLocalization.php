@@ -25,7 +25,15 @@ class HandleLocalization
      */
     public function handle(Request $request, Closure $next): Response
     {
-        app()->setLocale($request->cookie('locale', config('app.locale')));
+        $locale = $request->cookie('locale', config('app.locale'));
+
+        // The cookie is user-controllable (set via GET /lang/{locale}), so fall back
+        // to the default locale instead of passing an invalid value to the translator.
+        if (! in_array($locale, (array) config('app.available_locales'), true)) {
+            $locale = config('app.locale');
+        }
+
+        app()->setLocale($locale);
 
         return $next($request);
     }

@@ -29,4 +29,5 @@ yarn-error.log
 *.yaml
 *.yml
 /storage/framework/tmp
+.qwen
 

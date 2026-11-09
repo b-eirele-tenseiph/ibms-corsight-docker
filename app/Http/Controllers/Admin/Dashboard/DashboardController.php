@@ -36,6 +36,8 @@ class DashboardController extends Controller
     // deviceEnergyData         (16.0) Load electric meter data per meter.
     // carbonFootprintData      (17.0) Load carbon footprint of all meter.
     // powerFactorData          (18.0) Load power factor data per device.
+    // corsightData             (20.0) Load Corsight data for the CCTV
+    //                                 dashboard tab.
 
     /**
      * <Layer number> (1.0)
@@ -347,5 +349,19 @@ class DashboardController extends Controller
             'counter' => $this->service->loadVisitorCounter(),
             'graph'   => $this->service->loadVisitorGraphData()
         ]);
+    }
+
+    /**
+     * <Layer number> (20.0)
+     *
+     * <Processing name> corsightData
+     * <Function> Load Corsight people-counting data for the CCTV
+     *            dashboard tab.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function corsightData(): JsonResponse
+    {
+        return response()->json($this->service->loadCorsightDashboardData());
     }
 }

@@ -4,6 +4,7 @@ namespace App\Services\Admin;
 
 use App\Models\Activity;
 use App\Models\Room;
+use App\Models\{CorsightDevice, CorsightDeviceData, CorsightPersonSession};
 use App\Models\{ElectricityRate, HourlyConsumption, HourlyVisitor, MonthlyConsumption};
 use App\Models\{LorawanDevice, LorawanGateway};
 use App\Models\{SwitchBotAccount, SwitchBotDevice, SwitchBotRemote};
@@ -12,6 +13,7 @@ use Carbon\{Carbon, CarbonPeriod};
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 
 class AdminDashboardService
 {
@@ -48,6 +50,14 @@ class AdminDashboardService
     // loadVisitorCounter        (20.0) Load visitor counter summary for
     //                                  dashboard.
     // loadVisitorGraphData      (21.0) Load visitor graph data for dashboard.
+    // loadCorsightDashboardData (22.0) Load Corsight CCTV dashboard payload
+    //                                  (recent logs, rooms, dwell time).
+    // mapCorsightGender         (23.0) Map raw Fortify gender to dashboard
+    //                                  enum.
+    // mapCorsightAgeRange       (24.0) Re-bucket raw Fortify age group into
+    //                                  dashboard ranges.
+    // corsightRoomLabel         (25.0) Location label shared by rooms and
+    //                                  recent logs.
 
     /**
      * <Layer number> (1.0)
@@ -197,10 +207,10 @@ class AdminDashboardService
     public function loadDeviceSummary(): array
     {
         $remoteActive = fn($d) =>
-            strtolower(data_get($d, 'latestData.context.powerState', '')) === 'on';
+        strtolower(data_get($d, 'latestData.context.powerState', '')) === 'on';
 
         $deviceActive = fn($d) =>
-            strtolower(data_get($d, 'latestData.context.powerState', '')) === 'on' ||
+        strtolower(data_get($d, 'latestData.context.powerState', '')) === 'on' ||
             strtolower(data_get($d, 'latestData.context.power', '')) === 'on';
 
         $summary = [];
@@ -942,5 +952,186 @@ class AdminDashboardService
 
             return [$t->format('Y/m/d H:i'), (int)($rows[$key] ?? 0)];
         })->all();
+    }
+
+    /**
+     * <Layer number> (22.0)
+     *
+     * <Processing name> loadCorsightDashboardData
+     * <Function> Load the Corsight CCTV dashboard payload (recent visit
+     *            logs, per-room camera and occupancy summary, per-room
+     *            dwell time) for the last 30 days.
+     *
+     * <Notes> Source is the projected person sessions (one row per camera
+     *         visit) and the device registry; raw event context is never
+     *         parsed here. Face crops are returned only for the newest 30
+     *         rows to keep the payload small.
+     *
+     * @return array
+     */
+    public function loadCorsightDashboardData(): array
+    {
+        $windowStart = now()->subDays(30);
+
+        $sessions = CorsightPersonSession::query()
+            ->countable()
+            ->where('enter_at', '>=', $windowStart)
+            ->orderByDesc('enter_at')
+            ->limit(500)
+            ->select(['id', 'status', 'enter_at', 'exit_at', 'last_seen_at', 'dwell_seconds', 'gender', 'age_group', 'device_id'])
+            ->with('device:id,name,room_id', 'device.room:id,name')
+            ->get();
+
+        $imageIds = $sessions->slice(0, 30)->pluck('id');
+        $images = $imageIds->isEmpty()
+            ? collect()
+            : CorsightPersonSession::query()
+            ->whereIn('id', $imageIds)
+            ->get(['id', 'image'])
+            ->filter(fn($session) => filled($session->image))
+            ->pluck('image', 'id');
+
+        $devices = CorsightDevice::query()
+            ->with('room:id,name')
+            ->get();
+
+        $deviceIds = $devices->pluck('id');
+
+        $lastActivity = $deviceIds->isEmpty()
+            ? collect()
+            : CorsightDeviceData::query()
+            ->whereIn('device_id', $deviceIds)
+            ->groupBy('device_id')
+            ->get(['device_id', DB::raw('max(received_at) as last_at')])
+            ->pluck('last_at', 'device_id');
+
+        $staleBefore = now()->subMinutes((int) config('corsight.health_stale_minutes', 30));
+
+        $openByDevice = $deviceIds->isEmpty()
+            ? collect()
+            : CorsightPersonSession::query()
+            ->countable()
+            ->where('status', 'in')
+            ->whereIn('device_id', $deviceIds)
+            ->get(['device_id'])
+            ->groupBy('device_id')
+            ->map->count();
+
+        $rooms = $devices
+            ->groupBy(fn($device) => $this->corsightRoomLabel($device))
+            ->map(function ($group) use ($lastActivity, $staleBefore, $openByDevice) {
+                return [
+                    'name' => $this->corsightRoomLabel($group->first()),
+                    'active_cameras' => $group->filter(
+                        fn($device) => $lastActivity->has($device->id)
+                            && Carbon::parse($lastActivity->get($device->id))->gte($staleBefore)
+                    )->count(),
+                    'total_cameras' => $group->count(),
+                    'occupancy' => (int) $group->sum(fn($device) => $openByDevice->get($device->id, 0)),
+                ];
+            })
+            ->values();
+
+        $dwellTime = $sessions
+            ->filter(fn($session) => $session->device !== null)
+            ->groupBy(fn($session) => $this->corsightRoomLabel($session->device))
+            ->map(function ($group) {
+                $closed = $group->where('status', '!=', 'in');
+                $completed = $closed->whereNotNull('dwell_seconds');
+                $latest = $closed->sortByDesc('enter_at')->first() ?? $group->sortByDesc('enter_at')->first();
+                $endAt = $latest ? ($latest->exit_at ?? $latest->last_seen_at ?? now()) : null;
+
+                return [
+                    'room' => $this->corsightRoomLabel($group->first()->device),
+                    'average_dwell_seconds' => $completed->isEmpty() ? 0 : (int) round($completed->avg('dwell_seconds')),
+                    'start' => $latest?->enter_at?->toIso8601ZuluString(),
+                    'end' => $endAt?->toIso8601ZuluString(),
+                    'duration_seconds' => $latest ? (int) abs($endAt->diffInSeconds($latest->enter_at)) : 0,
+                ];
+            })
+            ->values();
+
+        return [
+            'last_updated' => now()->toIso8601ZuluString(),
+            'recent_logs' => $sessions->map(fn($session) => [
+                'id' => $session->id,
+                'image' => $images->has($session->id) ? 'data:image/jpeg;base64,' . $images->get($session->id) : null,
+                'gender' => $this->mapCorsightGender($session->gender),
+                'age_range' => $this->mapCorsightAgeRange($session->age_group),
+                'direction' => $session->status === 'in' ? 'entered' : 'exited',
+                'room' => $session->device ? $this->corsightRoomLabel($session->device) : null,
+                'timestamp' => $session->enter_at?->toIso8601ZuluString(),
+            ])->all(),
+            'rooms' => $rooms->all(),
+            'dwell_time' => $dwellTime->all(),
+        ];
+    }
+
+    /**
+     * <Layer number> (23.0)
+     *
+     * <Processing name> mapCorsightGender
+     * <Function> Map a raw Fortify gender outcome to the dashboard enum.
+     *
+     * @param  string|null  $gender
+     * @return string
+     */
+    private function mapCorsightGender(?string $gender): string
+    {
+        return match (strtolower(trim((string) $gender))) {
+            'male' => 'male',
+            'female' => 'female',
+            default => 'unknown',
+        };
+    }
+
+    /**
+     * <Layer number> (24.0)
+     *
+     * <Processing name> mapCorsightAgeRange
+     * <Function> Re-bucket a raw Fortify age group into the dashboard's
+     *            10-year ranges; null when not determined.
+     *
+     * <Notes> Fortify emits 5-year groups (e.g. "20-24"); the lower bound
+     *         decides the bucket. The exact vendor enum is verified against
+     *         live rows once the cameras stream.
+     *
+     * @param  string|null  $ageGroup
+     * @return string|null
+     */
+    private function mapCorsightAgeRange(?string $ageGroup): ?string
+    {
+        if (! filled($ageGroup) || strtolower(trim($ageGroup)) === 'not_determined') {
+            return null;
+        }
+
+        if (! preg_match('/(\d+)/', $ageGroup, $matches)) {
+            return null;
+        }
+
+        $lowerBound = (int) $matches[1];
+
+        return match (true) {
+            $lowerBound < 30 => '20-29',
+            $lowerBound < 40 => '30-39',
+            $lowerBound < 50 => '40-49',
+            default => '50+',
+        };
+    }
+
+    /**
+     * <Layer number> (25.0)
+     *
+     * <Processing name> corsightRoomLabel
+     * <Function> Location label shared by rooms[].name and
+     *            recent_logs[].room — the iBMS room name when the device
+     *            has one, otherwise the camera name.
+     *
+     * @param  \App\Models\CorsightDevice  $device
+     * @return string
+     */
+    private function corsightRoomLabel(CorsightDevice $device): string
+    {
+        return $device->room?->name ?? $device->name;
     }
 }
