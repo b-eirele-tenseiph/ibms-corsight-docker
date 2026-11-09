@@ -1,0 +1,10 @@
+{
+    default_sni 192.168.1.155
+    auto_https disable_redirects
+}
+
+192.168.1.155 {
+    tls internal
+    encode zstd gzip
+    reverse_proxy web:80
+}

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Admin;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class AdminSeeder extends Seeder
 {
@@ -13,15 +14,26 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        Admin::query()->delete();
+        $password = env('ADMIN_SEED_PASSWORD');
 
-        Admin::factory()->state([
-            'id' => \Illuminate\Support\Str::uuid(),
-            'name' => 'Tensei PH Super Admin',
-            'username' => 'tp_super_admin',
-            'enabled' => true,
-            'email' => 'tpadmin@example.com',
-            'password' => Hash::make('Tensei001@')
-        ])->create();
+        if (! $password) {
+            if (! app()->environment('local', 'testing')) {
+                throw new \RuntimeException('Set ADMIN_SEED_PASSWORD in .env before seeding the admin account.');
+            }
+
+            $password = 'Tensei001@';
+        }
+
+        Admin::unguarded(fn () => Admin::firstOrCreate(
+            ['username' => 'tp_super_admin'],
+            [
+                'id' => (string) Str::uuid(),
+                'name' => 'Tensei PH Super Admin',
+                'email' => 'tpadmin@example.com',
+                'password' => Hash::make($password),
+                'enabled' => true,
+                'email_verified_at' => now(),
+            ]
+        ));
     }
 }
