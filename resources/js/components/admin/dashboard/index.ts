@@ -1,4 +1,5 @@
 export { default as CctvTabLayout } from './DashboardCctvTabLayout.vue';
+export { default as CctvToolbar } from './DashboardCctvToolbar.vue';
 export { default as EnergyTabLayout } from './DashboardEnergyTabLayout.vue';
 export { default as GridItemLayout } from './DashboardGridItemLayout.vue';
 export { default as MonitoringTabLayout } from './DashboardMonitoringTabLayout.vue';
@@ -21,6 +22,7 @@ export { default as PowerFactorPanel } from './energy-tab/DashboardPowerFactorPa
 
 export { default as CctvDemographicsPanel } from './cctv-tab/DashboardCctvDemographicsPanel.vue';
 export { default as CctvDwellTimePanel } from './cctv-tab/DashboardCctvDwellTimePanel.vue';
+export { default as CctvFootTrafficPanel } from './cctv-tab/DashboardCctvFootTrafficPanel.vue';
 export { default as CctvPeopleCountPanel } from './cctv-tab/DashboardCctvPeopleCountPanel.vue';
 export { default as CctvRecentLogPanel } from './cctv-tab/DashboardCctvRecentLogPanel.vue';
 

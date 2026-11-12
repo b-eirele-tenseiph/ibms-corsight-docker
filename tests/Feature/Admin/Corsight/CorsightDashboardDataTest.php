@@ -22,14 +22,16 @@ class CorsightDashboardDataTest extends TestCase
     // makeDiaryRow                       (2.0) Create a diary row for a device.
     // test_returns_corsight_dashboard_payload_shape (3.0)
     // test_excludes_sessions_outside_30_day_window (4.0)
-    // test_caps_recent_logs_at_500_rows  (5.0)
+    // test_returns_all_sessions_in_window_without_cap (5.0)
     // test_returns_images_only_for_newest_thirty_sessions (6.0)
-    // test_maps_gender_values            (7.0)
-    // test_maps_age_groups_to_dashboard_ranges (8.0)
-    // test_direction_reflects_session_status (9.0)
-    // test_groups_rooms_by_camera_location_and_counts (10.0)
-    // test_computes_dwell_time_per_room  (11.0)
-    // test_requires_admin_authentication (12.0)
+    // test_filters_today_range           (7.0)
+    // test_filters_seven_day_range       (8.0)
+    // test_maps_gender_values            (9.0)
+    // test_maps_age_groups_to_dashboard_ranges (10.0)
+    // test_direction_reflects_session_status (11.0)
+    // test_groups_rooms_by_camera_location_and_counts (12.0)
+    // test_computes_dwell_time_per_camera  (13.0)
+    // test_requires_admin_authentication (14.0)
 
     /**
      * <Layer number> (1.0)
@@ -110,13 +112,16 @@ class CorsightDashboardDataTest extends TestCase
             ->assertJsonStructure([
                 'last_updated',
                 'recent_logs' => [[
-                    'id', 'image', 'gender', 'age_range', 'direction', 'room', 'timestamp',
+                    'id', 'image', 'gender', 'age_range', 'direction', 'device_id', 'device_name', 'room', 'timestamp', 'exit_at',
                 ]],
                 'rooms' => [[
                     'name', 'active_cameras', 'total_cameras', 'occupancy',
                 ]],
+                'devices' => [[
+                    'id', 'name', 'room',
+                ]],
                 'dwell_time' => [[
-                    'room', 'average_dwell_seconds', 'start', 'end', 'duration_seconds',
+                    'device_id', 'device_name', 'room', 'average_dwell_seconds', 'start', 'end', 'duration_seconds',
                 ]],
             ]);
 
@@ -124,11 +129,17 @@ class CorsightDashboardDataTest extends TestCase
             ->getJson('/admin/dashboard/corsight-data')
             ->assertOk()
             ->assertJsonPath('recent_logs.0.image', 'data:image/jpeg;base64,ABC123')
+            ->assertJsonPath('recent_logs.0.device_id', $device->id)
+            ->assertJsonPath('recent_logs.0.device_name', $device->name)
             ->assertJsonPath('recent_logs.0.room', 'Lobby')
             ->assertJsonPath('rooms.0.name', 'Lobby')
             ->assertJsonPath('rooms.0.total_cameras', 1)
             ->assertJsonPath('rooms.0.active_cameras', 0)
-            ->assertJsonPath('rooms.0.occupancy', 0);
+            ->assertJsonPath('rooms.0.occupancy', 0)
+            ->assertJsonPath('devices.0.id', $device->id)
+            ->assertJsonPath('devices.0.name', $device->name)
+            ->assertJsonPath('devices.0.room', 'Lobby')
+            ->assertJsonPath('dwell_time.0.device_id', $device->id);
     }
 
     /**
@@ -169,12 +180,13 @@ class CorsightDashboardDataTest extends TestCase
     /**
      * <Layer number> (5.0)
      *
-     * <Processing name> test_caps_recent_logs_at_500_rows
-     * <Function> Check that the recent logs list is capped at 500 rows.
+     * <Processing name> test_returns_all_sessions_in_window_without_cap
+     * <Function> Check that every session inside the 30-day window is
+     *            returned — no row cap.
      *
      * @return void
      */
-    public function test_caps_recent_logs_at_500_rows()
+    public function test_returns_all_sessions_in_window_without_cap()
     {
         $admin = $this->createAdminUser();
         $device = CorsightDevice::factory()->create();
@@ -192,7 +204,7 @@ class CorsightDashboardDataTest extends TestCase
         $this->actingAs($admin, 'admin')
             ->getJson('/admin/dashboard/corsight-data')
             ->assertOk()
-            ->assertJsonCount(500, 'recent_logs');
+            ->assertJsonCount(502, 'recent_logs');
     }
 
     /**
@@ -232,6 +244,78 @@ class CorsightDashboardDataTest extends TestCase
     /**
      * <Layer number> (7.0)
      *
+     * <Processing name> test_filters_today_range
+     * <Function> Check that ?range=today returns only sessions from the
+     *            current day.
+     *
+     * @return void
+     */
+    public function test_filters_today_range()
+    {
+        $admin = $this->createAdminUser();
+        $device = CorsightDevice::factory()->create();
+
+        $yesterday = $this->makeSession($device, [
+            'status' => 'exited',
+            'enter_at' => now()->subDay()->subHours(2),
+            'exit_at' => now()->subDay()->subHours(2)->addMinutes(5),
+            'last_seen_at' => now()->subDay()->subHours(2)->addMinutes(5),
+            'dwell_seconds' => 300,
+        ]);
+        $today = $this->makeSession($device, [
+            'status' => 'exited',
+            'enter_at' => now()->subMinutes(30),
+            'exit_at' => now()->subMinutes(25),
+            'last_seen_at' => now()->subMinutes(25),
+            'dwell_seconds' => 300,
+        ]);
+
+        $this->actingAs($admin, 'admin')
+            ->getJson('/admin/dashboard/corsight-data?range=today')
+            ->assertOk()
+            ->assertJsonCount(1, 'recent_logs')
+            ->assertJsonPath('recent_logs.0.id', $today->id);
+    }
+
+    /**
+     * <Layer number> (8.0)
+     *
+     * <Processing name> test_filters_seven_day_range
+     * <Function> Check that ?range=last_7_days returns sessions from the
+     *            last seven days and excludes older ones.
+     *
+     * @return void
+     */
+    public function test_filters_seven_day_range()
+    {
+        $admin = $this->createAdminUser();
+        $device = CorsightDevice::factory()->create();
+
+        $old = $this->makeSession($device, [
+            'status' => 'exited',
+            'enter_at' => now()->subDays(8),
+            'exit_at' => now()->subDays(8)->addMinutes(5),
+            'last_seen_at' => now()->subDays(8)->addMinutes(5),
+            'dwell_seconds' => 300,
+        ]);
+        $recent = $this->makeSession($device, [
+            'status' => 'exited',
+            'enter_at' => now()->subDays(3),
+            'exit_at' => now()->subDays(3)->addMinutes(5),
+            'last_seen_at' => now()->subDays(3)->addMinutes(5),
+            'dwell_seconds' => 300,
+        ]);
+
+        $this->actingAs($admin, 'admin')
+            ->getJson('/admin/dashboard/corsight-data?range=last_7_days')
+            ->assertOk()
+            ->assertJsonCount(1, 'recent_logs')
+            ->assertJsonPath('recent_logs.0.id', $recent->id);
+    }
+
+    /**
+     * <Layer number> (9.0)
+     *
      * <Processing name> test_maps_gender_values
      * <Function> Check that raw Fortify gender outcomes map to the
      *            dashboard enum (unknown as the fallback).
@@ -266,7 +350,7 @@ class CorsightDashboardDataTest extends TestCase
     }
 
     /**
-     * <Layer number> (8.0)
+     * <Layer number> (10.0)
      *
      * <Processing name> test_maps_age_groups_to_dashboard_ranges
      * <Function> Check that raw Fortify age groups re-bucket into the
@@ -302,7 +386,7 @@ class CorsightDashboardDataTest extends TestCase
     }
 
     /**
-     * <Layer number> (9.0)
+     * <Layer number> (11.0)
      *
      * <Processing name> test_direction_reflects_session_status
      * <Function> Check that open sessions report "entered" while closed
@@ -343,7 +427,7 @@ class CorsightDashboardDataTest extends TestCase
     }
 
     /**
-     * <Layer number> (10.0)
+     * <Layer number> (12.0)
      *
      * <Processing name> test_groups_rooms_by_camera_location_and_counts
      * <Function> Check that rooms group cameras by room name (camera name
@@ -390,15 +474,16 @@ class CorsightDashboardDataTest extends TestCase
     }
 
     /**
-     * <Layer number> (11.0)
+     * <Layer number> (13.0)
      *
-     * <Processing name> test_computes_dwell_time_per_room
+     * <Processing name> test_computes_dwell_time_per_camera
      * <Function> Check that the dwell panel averages closed-session dwell
-     *            per room and anchors the latest visit's start/end.
+     *            per camera (device) and anchors the latest visit's
+     *            start/end.
      *
      * @return void
      */
-    public function test_computes_dwell_time_per_room()
+    public function test_computes_dwell_time_per_camera()
     {
         $admin = $this->createAdminUser();
         $lobby = Room::factory()->create(['name' => 'Lobby']);
@@ -431,7 +516,7 @@ class CorsightDashboardDataTest extends TestCase
     }
 
     /**
-     * <Layer number> (12.0)
+     * <Layer number> (14.0)
      *
      * <Processing name> test_requires_admin_authentication
      * <Function> Check that unauthenticated visitors are redirected away

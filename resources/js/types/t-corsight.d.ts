@@ -19,16 +19,27 @@ export interface CorsightRecentLog {
     gender: 'male' | 'female' | 'unknown';
     age_range: '20-29' | '30-39' | '40-49' | '50+' | null;
     direction: 'entered' | 'exited';
+    device_id: number;
+    device_name: string | null;
     room: string | null;
     timestamp: string;
+    exit_at: string | null;
 }
 
 export interface CorsightDwellTime {
+    device_id: number;
+    device_name: string | null;
     room: string;
     average_dwell_seconds: number;
     start: string;
     end: string;
     duration_seconds: number;
+}
+
+export interface CorsightDeviceOption {
+    id: number;
+    name: string;
+    room: string;
 }
 
 export interface CorsightDemographics {
@@ -44,4 +55,4 @@ export interface CorsightDemographics {
     }[];
 }
 
-export type CctvTimeRange = 'today' | '7d' | '30d';
+export type CctvTimeRange = 'today' | 'last_7_days' | 'last_30_days';

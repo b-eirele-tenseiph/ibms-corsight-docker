@@ -200,6 +200,8 @@ category:
   all_location: "すべての場所"
 
 filter:
+  add_filter: フィルター追加
+  add_filter_description: 必要なデータを検索
   select_all: すべて選択
   select_item: 項目を選択
   select_origin_type: 発生源タイプを選択
@@ -927,6 +929,8 @@ page:
         recent_log_subtitle: 接続カメラからの最新の人物検知
         demographics: 属性情報
         demographics_subtitle: 検知された訪問者の年齢・性別の内訳
+        foot_traffic: フットトラフィック
+        foot_traffic_subtitle: 時間別の入場・退場人数
       label:
         entered: 入場人数
         exited: 退場人数
@@ -938,6 +942,8 @@ page:
         unknown: 不明
         entered_badge: 入場
         exited_badge: 退場
+        busiest_hour: "ピーク時間: {time}"
+        busiest_day: "ピーク日: {time}"
         person: 追跡された人物
         no_logs: 検知ログはまだありません。
         no_dwell_data: 滞在時間データはまだありません。
@@ -961,6 +967,7 @@ page:
         raw_json_title: 生 JSON
         raw_json_description: フロントエンドが使用する現在のペイロード形状。Corsight バックエンド統合時に役立ちます。
         live: ライブ
+        disconnected: 切断済み
         last_updated: "最終更新: {time}"
         all_locations: 全ロケーション
         time: 時刻
@@ -970,9 +977,11 @@ page:
         age_group: 年齢層
         status: ステータス
       filter:
+        date_range: 日付範囲
         today: 今日
         last_7_days: 過去 7 日間
         last_30_days: 過去 30 日間
+        device: 機器
   water_monitoring:
     header:
       water_consumption: 水使用量
@@ -1032,6 +1041,7 @@ page:
       generate_report: レポートを作成する
     filter:
       add_filter: フィルターを追加
+      add_filter_description: ライブデータを絞り込むため部屋とカメラを選択してください。
     download:
       png: PNGでダウンロード
       svg: SVGでダウンロード

@@ -33,4 +33,5 @@ Route::post('switchbot/endpoint', SwitchBotEndpointController::class)
     ->name('switchbot-endpoint');
 
 Route::post('corsight/endpoint', CorsightEndpointController::class)
-    ->name('corsight-endpoint');
+    ->name('corsight-endpoint')
+    ->withoutMiddleware('throttle:api');

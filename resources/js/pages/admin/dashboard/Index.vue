@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { CctvTabLayout, DashboardTabLayout, EnergyTabLayout, MonitoringTabLayout } from '@/components/admin/dashboard';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { useCorsightMonitoring } from '@/composables/useCorsightMonitoring';
 import { useElectricMeters } from '@/composables/useElectricMeters';
 import { useLocalStorageRef } from '@/composables/useLocalStorage';
 import { AdminLayout } from '@/layouts/admin';
@@ -14,6 +15,10 @@ defineProps({
 });
 
 const selectedTab = useLocalStorageRef<string>('dashboardActiveTab', 'monitoring');
+
+// Single Corsight instance shared by the CCTV toolbar (tab row) and the
+// CCTV tab so the filters and live badge stay in sync.
+const corsight = useCorsightMonitoring();
 
 const gridSettings = computed(() => {
     const breakpoints = [
@@ -862,27 +867,86 @@ const cctvDwellTime = reactive({
         {
             column_number: '9',
             context: {
-                x: 5,
-                y: 0,
-                w: 4,
+                x: 6,
+                y: 5,
+                w: 3,
                 h: 5,
             },
         },
         {
             column_number: '8',
             context: {
-                x: 4,
-                y: 0,
-                w: 4,
+                x: 6,
+                y: 5,
+                w: 2,
                 h: 5,
             },
         },
         {
             column_number: '7',
             context: {
-                x: 4,
-                y: 0,
-                w: 3,
+                x: 5,
+                y: 5,
+                w: 2,
+                h: 5,
+            },
+        },
+        {
+            column_number: '5',
+            context: {
+                x: 3,
+                y: 5,
+                w: 2,
+                h: 5,
+            },
+        },
+        {
+            column_number: '4',
+            context: {
+                x: 0,
+                y: 10,
+                w: 4,
+                h: 5,
+            },
+        },
+        {
+            column_number: '2',
+            context: {
+                x: 0,
+                y: 10,
+                w: 2,
+                h: 5,
+            },
+        },
+    ],
+});
+
+const cctvFootTraffic = reactive({
+    positions: [
+        {
+            column_number: '9',
+            context: {
+                x: 0,
+                y: 5,
+                w: 6,
+                h: 5,
+            },
+        },
+        {
+            column_number: '8',
+            context: {
+                x: 0,
+                y: 5,
+                w: 6,
+                h: 5,
+            },
+        },
+        {
+            column_number: '7',
+            context: {
+                x: 0,
+                y: 5,
+                w: 5,
                 h: 5,
             },
         },
@@ -890,27 +954,27 @@ const cctvDwellTime = reactive({
             column_number: '5',
             context: {
                 x: 0,
-                y: 4,
-                w: 5,
-                h: 3,
+                y: 5,
+                w: 3,
+                h: 5,
             },
         },
         {
             column_number: '4',
             context: {
                 x: 0,
-                y: 3,
+                y: 5,
                 w: 4,
-                h: 2,
+                h: 5,
             },
         },
         {
             column_number: '2',
             context: {
                 x: 0,
-                y: 3,
+                y: 5,
                 w: 2,
-                h: 2,
+                h: 5,
             },
         },
     ],
@@ -923,7 +987,7 @@ const cctvDemographics = reactive({
             context: {
                 x: 0,
                 y: 0,
-                w: 5,
+                w: 3,
                 h: 5,
             },
         },
@@ -932,7 +996,7 @@ const cctvDemographics = reactive({
             context: {
                 x: 0,
                 y: 0,
-                w: 4,
+                w: 2,
                 h: 5,
             },
         },
@@ -941,7 +1005,7 @@ const cctvDemographics = reactive({
             context: {
                 x: 0,
                 y: 0,
-                w: 4,
+                w: 2,
                 h: 5,
             },
         },
@@ -950,8 +1014,8 @@ const cctvDemographics = reactive({
             context: {
                 x: 0,
                 y: 0,
-                w: 5,
-                h: 4,
+                w: 2,
+                h: 5,
             },
         },
         {
@@ -960,7 +1024,7 @@ const cctvDemographics = reactive({
                 x: 0,
                 y: 0,
                 w: 4,
-                h: 3,
+                h: 5,
             },
         },
         {
@@ -969,7 +1033,7 @@ const cctvDemographics = reactive({
                 x: 0,
                 y: 0,
                 w: 2,
-                h: 3,
+                h: 5,
             },
         },
     ],
@@ -980,37 +1044,37 @@ const cctvRecentLog = reactive({
         {
             column_number: '9',
             context: {
-                x: 0,
-                y: 5,
-                w: 9,
-                h: 6,
+                x: 3,
+                y: 0,
+                w: 6,
+                h: 5,
             },
         },
         {
             column_number: '8',
             context: {
-                x: 0,
-                y: 5,
-                w: 8,
-                h: 6,
+                x: 2,
+                y: 0,
+                w: 6,
+                h: 5,
             },
         },
         {
             column_number: '7',
             context: {
-                x: 0,
-                y: 5,
-                w: 7,
-                h: 6,
+                x: 2,
+                y: 0,
+                w: 5,
+                h: 5,
             },
         },
         {
             column_number: '5',
             context: {
-                x: 0,
-                y: 7,
-                w: 5,
-                h: 4,
+                x: 2,
+                y: 0,
+                w: 3,
+                h: 5,
             },
         },
         {
@@ -1019,7 +1083,7 @@ const cctvRecentLog = reactive({
                 x: 0,
                 y: 5,
                 w: 4,
-                h: 3,
+                h: 6,
             },
         },
         {
@@ -1028,7 +1092,7 @@ const cctvRecentLog = reactive({
                 x: 0,
                 y: 5,
                 w: 2,
-                h: 3,
+                h: 6,
             },
         },
     ],
@@ -1055,6 +1119,7 @@ const [
     peopleCountPosition,
     cctvDwellTimePosition,
     cctvDemographicsPosition,
+    cctvFootTrafficPosition,
     cctvRecentLogPosition,
 ] = [
     electricMeter,
@@ -1073,6 +1138,7 @@ const [
     peopleCount,
     cctvDwellTime,
     cctvDemographics,
+    cctvFootTraffic,
     cctvRecentLog,
 ].map((data) => computed(() => getWidgetPosition(data)));
 
@@ -1084,7 +1150,7 @@ onMounted(() => fetchMeters(false));
 <template>
     <Head :title="$t('head.dashboard')" />
     <AdminLayout title="head.dashboard">
-        <DashboardTabLayout v-model="selectedTab" class="shrink-0" />
+        <DashboardTabLayout v-model="selectedTab" :corsight="corsight" class="shrink-0" />
 
         <ScrollArea class="flex-1 overflow-y-auto pr-1">
             <MonitoringTabLayout
@@ -1127,10 +1193,12 @@ onMounted(() => fetchMeters(false));
             <CctvTabLayout
                 v-show="selectedTab === 'cctv'"
                 :active="selectedTab === 'cctv'"
+                :corsight="corsight"
                 :grid-settings="gridSettings"
                 :position="{
                     dwellTimePosition: cctvDwellTimePosition,
                     demographicsPosition: cctvDemographicsPosition,
+                    footTrafficPosition: cctvFootTrafficPosition,
                     recentLogPosition: cctvRecentLogPosition,
                 }"
             />

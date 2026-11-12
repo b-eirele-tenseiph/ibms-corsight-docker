@@ -356,12 +356,13 @@ class DashboardController extends Controller
      *
      * <Processing name> corsightData
      * <Function> Load Corsight people-counting data for the CCTV
-     *            dashboard tab.
+     *            dashboard tab, scoped to the ?range= window
+     *            (today | last_7_days | last_30_days).
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function corsightData(): JsonResponse
+    public function corsightData(Request $request): JsonResponse
     {
-        return response()->json($this->service->loadCorsightDashboardData());
+        return response()->json($this->service->loadCorsightDashboardData($request->query('range', 'last_30_days')));
     }
 }

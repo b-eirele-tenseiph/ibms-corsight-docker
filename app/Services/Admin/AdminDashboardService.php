@@ -959,25 +959,31 @@ class AdminDashboardService
      *
      * <Processing name> loadCorsightDashboardData
      * <Function> Load the Corsight CCTV dashboard payload (recent visit
-     *            logs, per-room camera and occupancy summary, per-room
-     *            dwell time) for the last 30 days.
+     *            logs, per-room camera and occupancy summary, per-camera
+     *            dwell time, camera list) for the selected time range.
      *
      * <Notes> Source is the projected person sessions (one row per camera
      *         visit) and the device registry; raw event context is never
      *         parsed here. Face crops are returned only for the newest 30
-     *         rows to keep the payload small.
+     *         rows to keep the payload small. $range is one of "today",
+     *         "last_7_days", "last_30_days" (unknown values fall back to
+     *         the 30-day window).
      *
+     * @param  string  $range
      * @return array
      */
-    public function loadCorsightDashboardData(): array
+    public function loadCorsightDashboardData(string $range = 'last_30_days'): array
     {
-        $windowStart = now()->subDays(30);
+        $windowStart = match ($range) {
+            'today' => now()->startOfDay(),
+            'last_7_days' => now()->subDays(7),
+            default => now()->subDays(30),
+        };
 
         $sessions = CorsightPersonSession::query()
             ->countable()
             ->where('enter_at', '>=', $windowStart)
             ->orderByDesc('enter_at')
-            ->limit(500)
             ->select(['id', 'status', 'enter_at', 'exit_at', 'last_seen_at', 'dwell_seconds', 'gender', 'age_group', 'device_id'])
             ->with('device:id,name,room_id', 'device.room:id,name')
             ->get();
@@ -1032,9 +1038,10 @@ class AdminDashboardService
             })
             ->values();
 
+        // Per camera (device) so the dashboard's device filter can narrow it.
         $dwellTime = $sessions
             ->filter(fn($session) => $session->device !== null)
-            ->groupBy(fn($session) => $this->corsightRoomLabel($session->device))
+            ->groupBy(fn($session) => $session->device_id)
             ->map(function ($group) {
                 $closed = $group->where('status', '!=', 'in');
                 $completed = $closed->whereNotNull('dwell_seconds');
@@ -1042,6 +1049,8 @@ class AdminDashboardService
                 $endAt = $latest ? ($latest->exit_at ?? $latest->last_seen_at ?? now()) : null;
 
                 return [
+                    'device_id' => $group->first()->device_id,
+                    'device_name' => $group->first()->device?->name,
                     'room' => $this->corsightRoomLabel($group->first()->device),
                     'average_dwell_seconds' => $completed->isEmpty() ? 0 : (int) round($completed->avg('dwell_seconds')),
                     'start' => $latest?->enter_at?->toIso8601ZuluString(),
@@ -1052,17 +1061,27 @@ class AdminDashboardService
             ->values();
 
         return [
-            'last_updated' => now()->toIso8601ZuluString(),
+            // Freshness of the data, not the request — sessions are ordered
+            // enter_at desc, so the first row is the newest record.
+            'last_updated' => $sessions->isEmpty() ? null : $sessions->first()->enter_at?->toIso8601ZuluString(),
             'recent_logs' => $sessions->map(fn($session) => [
                 'id' => $session->id,
                 'image' => $images->has($session->id) ? 'data:image/jpeg;base64,' . $images->get($session->id) : null,
                 'gender' => $this->mapCorsightGender($session->gender),
                 'age_range' => $this->mapCorsightAgeRange($session->age_group),
                 'direction' => $session->status === 'in' ? 'entered' : 'exited',
+                'device_id' => $session->device_id,
+                'device_name' => $session->device?->name,
                 'room' => $session->device ? $this->corsightRoomLabel($session->device) : null,
                 'timestamp' => $session->enter_at?->toIso8601ZuluString(),
+                'exit_at' => $session->exit_at?->toIso8601ZuluString(),
             ])->all(),
             'rooms' => $rooms->all(),
+            'devices' => $devices->sortBy('name')->map(fn($device) => [
+                'id' => $device->id,
+                'name' => $device->name,
+                'room' => $this->corsightRoomLabel($device),
+            ])->values()->all(),
             'dwell_time' => $dwellTime->all(),
         ];
     }

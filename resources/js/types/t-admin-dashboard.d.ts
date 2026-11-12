@@ -174,5 +174,6 @@ export interface AdminEnergyPositionLayout {
 export interface AdminCctvPositionLayout {
     dwellTimePosition: GridPosition;
     demographicsPosition: GridPosition;
+    footTrafficPosition: GridPosition;
     recentLogPosition: GridPosition;
 }
