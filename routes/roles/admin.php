@@ -63,8 +63,7 @@ Route::group([
             Route::get('/daily-energy-data', 'dailyEnergyData')->name('.daily-energy-data');
             Route::get('/hourly-energy-data', 'hourlyEnergyData')->name('.hourly-energy-data');
             Route::get('/monthly-energy-data', 'monthlyEnergyData')->name('.monthly-energy-data');
-            Route::get('/electric-meters',  'electricMeters')->name('.electric-meters');
-            Route::get('/corsight-data', 'corsightData')->name('.corsight-data');
+            Route::get('/electric-meters', 'electricMeters')->name('.electric-meters');
         });
     });
 

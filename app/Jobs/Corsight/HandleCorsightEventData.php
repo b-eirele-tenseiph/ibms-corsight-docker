@@ -2,7 +2,6 @@
 
 namespace App\Jobs\Corsight;
 
-use App\Events\Corsight\CorsightDataUpdated;
 use App\Models\CorsightDevice;
 use App\Models\CorsightDeviceData;
 use App\Services\Corsight\CorsightEventProjector;
@@ -169,12 +168,5 @@ class HandleCorsightEventData implements ShouldQueue
                 default => null,
             };
         });
-
-        // Notify connected CCTV dashboards that fresh data is available so
-        // they can refresh without a manual page reload.
-        CorsightDataUpdated::dispatch(
-            $this->device->room?->name ?? $this->device->name,
-            $this->type ?? 'unknown',
-        );
     }
 }
