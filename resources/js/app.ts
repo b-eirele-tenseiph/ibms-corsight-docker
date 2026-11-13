@@ -13,10 +13,20 @@ import EChartsPlugin from './lib/echarts';
 configureEcho({
     broadcaster: 'reverb',
     key: import.meta.env.VITE_REVERB_APP_KEY,
+    // VITE_REVERB_HOST set (local dev) -> connect straight to the Reverb
+    // server. Left empty (production) -> same-origin: mirror the page's own
+    // host, port and protocol so it works behind the nginx /app WebSocket
+    // proxy on any domain, IP or port (e.g. http://192.168.1.155:18080).
     wsHost: import.meta.env.VITE_REVERB_HOST || window.location.hostname,
-    wsPort: import.meta.env.VITE_REVERB_HOST ? (import.meta.env.VITE_REVERB_PORT ?? 8080) : 80,
-    wssPort: import.meta.env.VITE_REVERB_HOST ? (import.meta.env.VITE_REVERB_PORT ?? 8080) : 443,
-    forceTLS: !import.meta.env.VITE_REVERB_HOST || (import.meta.env.VITE_REVERB_SCHEME ?? 'https') === 'https',
+    wsPort: import.meta.env.VITE_REVERB_HOST
+        ? Number(import.meta.env.VITE_REVERB_PORT || 8080)
+        : Number(window.location.port || (window.location.protocol === 'https:' ? 443 : 80)),
+    wssPort: import.meta.env.VITE_REVERB_HOST
+        ? Number(import.meta.env.VITE_REVERB_PORT || 8080)
+        : Number(window.location.port || (window.location.protocol === 'https:' ? 443 : 80)),
+    forceTLS: import.meta.env.VITE_REVERB_HOST
+        ? false
+        : window.location.protocol === 'https:',
     enabledTransports: ['ws', 'wss'],
 });
 
