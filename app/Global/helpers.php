@@ -149,23 +149,17 @@ if (!function_exists('formatEndian')) {
 if (!function_exists('is_channel_occupied')) {
     function is_channel_occupied(string $channel): mixed
     {
-        $isOccupied = false;
-        // Create a new Pusher instance
+        $cacheKey = "broadcast_channel_occupied_{$channel}";
 
-        $pusher = new Pusher(
-            config('broadcasting.connections.pusher.key'),
-            config('broadcasting.connections.pusher.secret'),
-            config('broadcasting.connections.pusher.app_id'),
-            config('broadcasting.connections.pusher.options')
-        );
-
-        // Check if the channel occupation is already cached in the request cycle
-        if (app()->has("pusher_channel_occupied_{$channel}")) {
-            $isOccupied = app("pusher_channel_occupied_{$channel}");
-        } else {
-            $isOccupied = $pusher->getChannelInfo($channel)->occupied;
-            app()->instance("pusher_channel_occupied_{$channel}", $isOccupied);
+        if (app()->has($cacheKey)) {
+            return app($cacheKey);
         }
+
+        $config = config('broadcasting.connections.' . config('broadcasting.default'));
+        $pusher = new Pusher($config['key'], $config['secret'], $config['app_id'], $config['options']);
+
+        $isOccupied = $pusher->getChannelInfo($channel)->occupied;
+        app()->instance($cacheKey, $isOccupied);
 
         return $isOccupied;
     }

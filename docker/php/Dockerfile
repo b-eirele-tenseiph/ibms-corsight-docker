@@ -24,8 +24,10 @@ COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
 ARG VITE_APP_NAME
-ARG VITE_PUSHER_APP_KEY
-ARG VITE_PUSHER_APP_CLUSTER
+ARG VITE_REVERB_APP_KEY
+ARG VITE_REVERB_HOST
+ARG VITE_REVERB_PORT
+ARG VITE_REVERB_SCHEME
 RUN cp .env.example .env && composer dump-autoload --no-interaction && npm run build
 
 FROM base AS prod
@@ -35,8 +37,8 @@ COPY --chown=www-data:www-data . .
 COPY --from=vendor --chown=www-data:www-data /var/www/html/vendor ./vendor
 COPY --from=assets --chown=www-data:www-data /app/public/build ./public/build
 RUN composer dump-autoload --optimize --no-dev --no-interaction \
- && mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs storage/app/public bootstrap/cache \
- && chown -R www-data:www-data storage bootstrap/cache
+    && mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs storage/app/public bootstrap/cache \
+    && chown -R www-data:www-data storage bootstrap/cache
 USER www-data
 
 FROM nginx:1.27-alpine AS web
