@@ -25,9 +25,7 @@ RUN npm ci
 COPY . .
 ARG VITE_APP_NAME
 ARG VITE_REVERB_APP_KEY
-ARG VITE_REVERB_HOST
-ARG VITE_REVERB_PORT
-ARG VITE_REVERB_SCHEME
+ENV NODE_OPTIONS=--max-old-space-size=2048
 RUN cp .env.example .env && composer dump-autoload --no-interaction && npm run build
 
 FROM base AS prod

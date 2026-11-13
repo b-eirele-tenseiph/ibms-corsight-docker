@@ -65,10 +65,6 @@ return [
     | to use the "config" provider, you may define an array of apps which
     | your server will support, including their connection credentials.
     |
-    | The app entry keys below (allowed_origins, ping_interval, ...) must
-    | stay at the top level of the app array — ConfigApplicationProvider
-    | reads them directly.
-    |
     */
 
     'apps' => [

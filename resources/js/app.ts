@@ -10,23 +10,18 @@ import { Toaster, toast } from 'vue-sonner';
 import { initializeTheme } from './composables/useAppearance';
 import EChartsPlugin from './lib/echarts';
 
+const isHttps = window.location.protocol === 'https:';
+const reverbHost = import.meta.env.VITE_REVERB_HOST || window.location.hostname;
+const reverbPort = Number(import.meta.env.VITE_REVERB_PORT) || Number(window.location.port) || (isHttps ? 443 : 80);
+const reverbTls = (import.meta.env.VITE_REVERB_SCHEME || window.location.protocol.replace(':', '')) === 'https';
+
 configureEcho({
     broadcaster: 'reverb',
     key: import.meta.env.VITE_REVERB_APP_KEY,
-    // VITE_REVERB_HOST set (local dev) -> connect straight to the Reverb
-    // server. Left empty (production) -> same-origin: mirror the page's own
-    // host, port and protocol so it works behind the nginx /app WebSocket
-    // proxy on any domain, IP or port (e.g. http://192.168.1.155:18080).
-    wsHost: import.meta.env.VITE_REVERB_HOST || window.location.hostname,
-    wsPort: import.meta.env.VITE_REVERB_HOST
-        ? Number(import.meta.env.VITE_REVERB_PORT || 8080)
-        : Number(window.location.port || (window.location.protocol === 'https:' ? 443 : 80)),
-    wssPort: import.meta.env.VITE_REVERB_HOST
-        ? Number(import.meta.env.VITE_REVERB_PORT || 8080)
-        : Number(window.location.port || (window.location.protocol === 'https:' ? 443 : 80)),
-    forceTLS: import.meta.env.VITE_REVERB_HOST
-        ? false
-        : window.location.protocol === 'https:',
+    wsHost: reverbHost,
+    wsPort: reverbPort,
+    wssPort: reverbPort,
+    forceTLS: reverbTls,
     enabledTransports: ['ws', 'wss'],
 });
 
