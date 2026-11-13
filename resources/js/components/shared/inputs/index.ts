@@ -1,5 +1,6 @@
 export { default as InputAttributeStacker } from './InputAttributeStacker.vue';
 export { default as InputCheckboxWithLabel } from './InputCheckboxWithLabel.vue';
+export { default as InputComboBoxMultiSelect } from './InputComboBoxMultiSelect.vue';
 export { default as InputDateAndDate } from './InputDateAndDate.vue';
 export { default as InputDateAndTime } from './InputDateAndTime.vue';
 export { default as InputDatePicker } from './InputDatePicker.vue';

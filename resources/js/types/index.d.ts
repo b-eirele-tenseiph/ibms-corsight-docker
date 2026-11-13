@@ -77,6 +77,7 @@ export * from './t-amenity-category';
 export * from './t-amenity-photo';
 export * from './t-climate-analytics';
 export * from './t-climate-monitoring';
+export * from './t-corsight';
 export * from './t-electric-monitoring';
 export * from './t-electric-monitoring-report';
 export * from './t-food';

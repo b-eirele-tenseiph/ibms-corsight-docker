@@ -200,6 +200,8 @@ category:
   all_location: "すべての場所"
 
 filter:
+  add_filter: フィルター追加
+  add_filter_description: 必要なデータを検索
   select_all: すべて選択
   select_item: 項目を選択
   select_origin_type: 発生源タイプを選択
@@ -262,6 +264,7 @@ label:
   off: "オフ"
   monitoring: モニタリング
   energy: エネルギー
+  cctv: 監視カメラ
 
 unit:
   kwh: "kWh"
@@ -918,6 +921,67 @@ page:
       no_rate_title: 電力料金が設定されていません
       no_rate_message: kWhデータは利用可能ですが、料金がないためコストを計算できません。
       set_rate_button: 設定 → 電力料金
+    cctv:
+      header:
+        dwell_time: 滞在時間
+        dwell_time_subtitle: 最新の部屋滞在アクティビティ
+        recent_log: 最近の AI イベント
+        recent_log_subtitle: 接続カメラからの最新の人物検知
+        demographics: 属性情報
+        demographics_subtitle: 検知された訪問者の年齢・性別の内訳
+        foot_traffic: フットトラフィック
+        foot_traffic_subtitle: 時間別の入場・退場人数
+      label:
+        entered: 入場人数
+        exited: 退場人数
+        occupancy: 現在の滞留人数
+        active_cameras: 稼働中のカメラ
+        total_cameras: "計 {total} 台中"
+        male: 男性
+        female: 女性
+        unknown: 不明
+        entered_badge: 入場
+        exited_badge: 退場
+        busiest_hour: "ピーク時間: {time}"
+        busiest_day: "ピーク日: {time}"
+        person: 追跡された人物
+        no_logs: 検知ログはまだありません。
+        no_dwell_data: 滞在時間データはまだありません。
+        occupancy_caption: 現在室内
+        entries_caption: 期間内の入場数
+        exits_caption: 期間内の退場数
+        all_cameras_online: 全カメラオンライン
+        cameras_offline: "{count} 台オフライン"
+        total_detections: "{count} 件検知"
+        visitors: 訪問者
+        age_distribution: 年齢分布
+        average_dwell: 平均滞在時間
+        seconds: 秒
+        room_monitored: "{room} を監視中"
+        rooms_monitored: "{count} 部屋を監視中"
+        location: 場所
+        start: 開始
+        end: 終了
+        duration: 所要時間
+        view_raw_json: 生 JSON を表示
+        raw_json_title: 生 JSON
+        raw_json_description: フロントエンドが使用する現在のペイロード形状。Corsight バックエンド統合時に役立ちます。
+        live: ライブ
+        disconnected: 切断済み
+        last_updated: "最終更新: {time}"
+        all_locations: 全ロケーション
+        time: 時刻
+        camera_location: カメラ / 場所
+        photo: 写真
+        gender: 性別
+        age_group: 年齢層
+        status: ステータス
+      filter:
+        date_range: 日付範囲
+        today: 今日
+        last_7_days: 過去 7 日間
+        last_30_days: 過去 30 日間
+        device: 機器
   water_monitoring:
     header:
       water_consumption: 水使用量
@@ -977,6 +1041,7 @@ page:
       generate_report: レポートを作成する
     filter:
       add_filter: フィルターを追加
+      add_filter_description: ライブデータを絞り込むため部屋とカメラを選択してください。
     download:
       png: PNGでダウンロード
       svg: SVGでダウンロード

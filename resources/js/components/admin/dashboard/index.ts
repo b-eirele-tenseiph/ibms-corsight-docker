@@ -1,3 +1,5 @@
+export { default as CctvTabLayout } from './DashboardCctvTabLayout.vue';
+export { default as CctvToolbar } from './DashboardCctvToolbar.vue';
 export { default as EnergyTabLayout } from './DashboardEnergyTabLayout.vue';
 export { default as GridItemLayout } from './DashboardGridItemLayout.vue';
 export { default as MonitoringTabLayout } from './DashboardMonitoringTabLayout.vue';
@@ -17,6 +19,12 @@ export { default as MonthlyEnergyCostPanel } from './energy-tab/DashboardMonthly
 export { default as MonthlyEnergyCostFilter } from './energy-tab/DashboardMonthlyEnergyCostPanelFilter.vue';
 export { default as MonthlyEnergyCostTooltip } from './energy-tab/DashboardMonthlyEnergyCostPanelTooltip.vue';
 export { default as PowerFactorPanel } from './energy-tab/DashboardPowerFactorPanel.vue';
+
+export { default as CctvDemographicsPanel } from './cctv-tab/DashboardCctvDemographicsPanel.vue';
+export { default as CctvDwellTimePanel } from './cctv-tab/DashboardCctvDwellTimePanel.vue';
+export { default as CctvFootTrafficPanel } from './cctv-tab/DashboardCctvFootTrafficPanel.vue';
+export { default as CctvPeopleCountPanel } from './cctv-tab/DashboardCctvPeopleCountPanel.vue';
+export { default as CctvRecentLogPanel } from './cctv-tab/DashboardCctvRecentLogPanel.vue';
 
 export { default as DeviceCountPanel } from './monitoring-tab/DashboardDeviceCountPanel.vue';
 export { default as DeviceStatusPanel } from './monitoring-tab/DashboardDeviceStatusPanel.vue';
