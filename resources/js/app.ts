@@ -11,9 +11,10 @@ import { initializeTheme } from './composables/useAppearance';
 import EChartsPlugin from './lib/echarts';
 
 const isHttps = window.location.protocol === 'https:';
-const reverbHost = import.meta.env.VITE_REVERB_HOST || window.location.hostname;
-const reverbPort = Number(import.meta.env.VITE_REVERB_PORT) || Number(window.location.port) || (isHttps ? 443 : 80);
-const reverbTls = (import.meta.env.VITE_REVERB_SCHEME || window.location.protocol.replace(':', '')) === 'https';
+const dev = import.meta.env.DEV;
+const reverbHost = (dev && import.meta.env.VITE_REVERB_HOST) || window.location.hostname;
+const reverbPort = (dev && Number(import.meta.env.VITE_REVERB_PORT)) || Number(window.location.port) || (isHttps ? 443 : 80);
+const reverbTls = ((dev && import.meta.env.VITE_REVERB_SCHEME) || window.location.protocol.replace(':', '')) === 'https';
 
 configureEcho({
     broadcaster: 'reverb',
